@@ -63,6 +63,7 @@ crashlytics-build.properties
 Assets/Plugins/Feel/NiceVibrations/NiceVibrationsAHAPConverters.unitypackage.meta
 Assets/Plugins/Feel/NiceVibrations/OlderVersions/v1.7/NiceVibrations-v-1-7.unitypackage.meta
 Assets/Plugins/Feel/NiceVibrations/OlderVersions/v2.0.1/NiceVibrations-v-2-0-1.unitypackage.meta
+Library/PackageCache/
 
 Assets/Firebase/Plugins/x86_64/*.so.meta
 
