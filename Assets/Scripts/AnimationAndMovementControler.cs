@@ -8,7 +8,7 @@ public class AnimationAndMovementControler : MonoBehaviour
     CharacterController controller;
     public float moveSpeed = 12f;
     public float gravity = -9.8f;
-    public float jumpHeight = 3f;
+    
     
      Vector3 velocity;
 
@@ -33,10 +33,7 @@ public class AnimationAndMovementControler : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * moveSpeed * Time.deltaTime);
 
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
+        
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
