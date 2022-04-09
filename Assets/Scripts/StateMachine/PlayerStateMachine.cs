@@ -5,11 +5,21 @@ using UnityEngine;
 public class PlayerStateMachine : MonoBehaviour
 {
     CharacterController controller;
+<<<<<<< HEAD
     public float moveSpeed = 12f;
     public float gravity = -9.8f;
     public float jumpHeight = 3f;
 
     Vector3 velocity;
+=======
+
+    Vector3 moving;
+
+    float movY;
+    public float gravity;
+    public float speed;
+    public float jump;
+>>>>>>> 33aa88607f67085f32a66562cec291e7840e15bb
 
     void Start()
     {
@@ -24,6 +34,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     void Moving()
     {
+<<<<<<< HEAD
         if (controller.isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -44,5 +55,30 @@ public class PlayerStateMachine : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
 
+=======
+        moving = Vector3.zero;
+
+        Jump();
+
+        moving = Input.GetAxis("Horizontal") * transform.right * speed * Time.deltaTime;
+        moving += Input.GetAxis("Vertical") * transform.forward * speed * Time.deltaTime;
+        moving.y = movY * Time.deltaTime;
+
+
+        controller.Move(moving);
+
+
+    }
+
+    void Jump()
+    {
+        if (controller.isGrounded)
+        {
+            movY = 0;
+            if (Input.GetButtonDown("Jump")) { movY += jump; }
+        }
+
+        movY -= gravity;
+>>>>>>> 33aa88607f67085f32a66562cec291e7840e15bb
     }
 }

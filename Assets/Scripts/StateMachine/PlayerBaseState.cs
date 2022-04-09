@@ -12,6 +12,7 @@ public abstract class PlayerBaseState
         
     }
 
+<<<<<<< HEAD
     public abstract void EnterState();
 
     public abstract void UpdateState();
@@ -22,4 +23,16 @@ public abstract class PlayerBaseState
 
     public abstract void InitializeSubState();
     
+=======
+    /* void EnterState();
+
+    void UpdateState();
+
+    void ExitState();
+
+    void CheckSwitchStates();
+
+    void InitializeSubState();
+    */
+>>>>>>> 33aa88607f67085f32a66562cec291e7840e15bb
 }
