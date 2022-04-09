@@ -4,50 +4,29 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    CharacterController controller;
+    private CharacterController controller;
 
-    Vector3 moving;
+    private Vector3 _moving;
 
-    float movY;
-    public float gravity;
-    public float speed;
-    public float jump;
+    private float movY;
+    private float movX = Input.GetAxis("Horizontal");
+    private float movZ = Input.GetAxis("Vertical");
+    private float gravity;
+    private float speed;
 
-    void Start()
+    PlayerBaseState currentState;
+    public PlayerIdleState Idle = new PlayerIdleState();
+    public PlayerMovingState Moving = new PlayerMovingState();
+
+    public void Start() 
     {
-        
+        currentState = idle;    
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SwitchState(PlayerBaseState state)
     {
-        Moving();
+        currentState = state;
+        state.EnterState(this);
     }
 
-    void Moving()
-    {
-        moving = Vector3.zero;
-
-        Jump();
-
-        moving = Input.GetAxis("Horizontal") * transform.right * speed * Time.deltaTime;
-        moving += Input.GetAxis("Vertical") * transform.forward * speed * Time.deltaTime;
-        moving.y = movY * Time.deltaTime;
-
-
-        controller.Move(moving);
-
-
-    }
-
-    void Jump()
-    {
-        if (controller.isGrounded)
-        {
-            movY = 0;
-            if (Input.GetButtonDown("Jump")) { movY += jump; }
-        }
-
-        movY -= gravity;
-    }
 }
