@@ -39,7 +39,7 @@
                     "id": "5ef63e56-c595-4c19-b265-a9f549186047",
                     "path": "3DVector",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "NormalizeVector3",
                     "groups": "",
                     "action": "Movement",
                     "isComposite": true,
@@ -91,7 +91,7 @@
                 },
                 {
                     "name": "Forward",
-                    "id": "c4c9b256-7ad0-4f0b-9b75-4c2baa51ade9",
+                    "id": "9731381a-a919-4fe7-87ad-e26c2c87bbe1",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
@@ -102,7 +102,7 @@
                 },
                 {
                     "name": "Backward",
-                    "id": "77b1db56-8205-401f-9866-f90559348e3a",
+                    "id": "217806d9-6674-4b66-ac7a-6f8b3f298b1a",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",

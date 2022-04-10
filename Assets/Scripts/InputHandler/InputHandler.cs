@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class InputHandler : MonoBehaviour
 {
     private BaseMovement baseMove;
+
     private static InputHandler _instance;
     public static InputHandler Instance { get => _instance; }
 
@@ -20,6 +21,7 @@ public class InputHandler : MonoBehaviour
 
         baseMove = new BaseMovement();
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     public void OnMoveInput(InputAction.CallbackContext context)
     {
