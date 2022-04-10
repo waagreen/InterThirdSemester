@@ -2,28 +2,28 @@
     "name": "MouseLook",
     "maps": [
         {
-            "name": "MouseLock",
-            "id": "acac0b49-233d-4c8b-9288-ae29128156a2",
+            "name": "Mouse",
+            "id": "d5870c95-a1d7-4f3a-bede-cda496ddb45b",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "PassThrough",
-                    "id": "aae78677-488c-47ca-81d5-cbb2c40422fd",
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "f5eb646f-498c-4b35-8c3e-a405e320db8c",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "75a54dd0-2c2b-4bd9-810a-4f6e0735c1ef",
+                    "id": "04c5372e-2842-49c4-b37d-ad64c1328161",
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
