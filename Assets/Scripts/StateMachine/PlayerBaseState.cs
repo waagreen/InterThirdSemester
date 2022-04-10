@@ -1,38 +1,44 @@
 public abstract class PlayerBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    protected bool isRootState = false;
+    protected PlayerStateMachine _contex;
+    protected PlayerStateFactory _fact;
+    protected PlayerBaseState _currentSuperState;
+    protected PlayerBaseState _currentSubState;
+
+    public PlayerBaseState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory)
     {
-        
+        _contex = currentContext;
+        _fact = playerStateFactory;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-<<<<<<< HEAD
     public abstract void EnterState();
-
     public abstract void UpdateState();
-
     public abstract void ExitState();
-
     public abstract void CheckSwitchStates();
-
     public abstract void InitializeSubState();
-    
-=======
-    /* void EnterState();
 
-    void UpdateState();
+    public void UpdateStates() 
+    {
+        UpdateState();
+        if (_currentSubState != null) _currentSubState.UpdateStates();
+    }
+    protected void ChangeState(PlayerBaseState newState) 
+    {
+        ExitState();
+        newState.EnterState();
 
-    void ExitState();
-
-    void CheckSwitchStates();
-
-    void InitializeSubState();
-    */
->>>>>>> 33aa88607f67085f32a66562cec291e7840e15bb
+        if (isRootState) _contex.CurrentContext = newState;
+        else if (_currentSuperState != null) _currentSuperState.SetSubState(newState);
+    }
+    protected void SetSuperState(PlayerBaseState newSuperState) 
+    {
+        _currentSuperState = newSuperState;
+    }
+    protected void SetSubState(PlayerBaseState newSubState) 
+    {
+        _currentSubState = newSubState;
+        newSubState.SetSuperState(this);
+    }
 }

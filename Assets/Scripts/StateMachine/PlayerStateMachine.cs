@@ -1,84 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    CharacterController controller;
-<<<<<<< HEAD
-    public float moveSpeed = 12f;
-    public float gravity = -9.8f;
-    public float jumpHeight = 3f;
+    private PlayerBaseState _currentState;
+    private PlayerStateFactory _states;
 
-    Vector3 velocity;
-=======
+    public Camera mCam;
+    public CharacterController controller;
+    public InputHandler inputCallback;
 
-    Vector3 moving;
+    //variáveis (temporário: MUDAR PRA SCRIPTABLE OBJECT)
+    private Vector3 _direction;
+    private Vector3 _vision;
+    private float _xRot = 0f;
+    public float _speed;
+    public float _mouseSense;
 
-    float movY;
-    public float gravity;
-    public float speed;
-    public float jump;
->>>>>>> 33aa88607f67085f32a66562cec291e7840e15bb
+    //getters setters
+    public bool IsMovePressed { get => inputCallback._isMovePressed; }
+    public float xRotation { get => _xRot; set { _xRot = value; } }
+    public Vector3 Direction { get => _direction; set { _direction = value; } }
+    public Vector2 Vision { get => _vision; set { _vision = value; } }
 
-    void Start()
+    public PlayerBaseState CurrentContext
     {
-        
+        get => _currentState;
+        set
+        {
+            _currentState = value;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    //personagem sempre inicia no IDLE STATE
+    public void Awake()
     {
-        Moving();
+        _states = new PlayerStateFactory(this);
+        _currentState = _states.Idle();
+        _currentState.EnterState();
     }
 
-    void Moving()
+    public void FixedUpdate()
     {
-<<<<<<< HEAD
-        if (controller.isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * moveSpeed * Time.deltaTime);
-
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-
-
-=======
-        moving = Vector3.zero;
-
-        Jump();
-
-        moving = Input.GetAxis("Horizontal") * transform.right * speed * Time.deltaTime;
-        moving += Input.GetAxis("Vertical") * transform.forward * speed * Time.deltaTime;
-        moving.y = movY * Time.deltaTime;
-
-
-        controller.Move(moving);
-
-
+        _currentState.UpdateState();
     }
 
-    void Jump()
+    public void Moving()
     {
-        if (controller.isGrounded)
-        {
-            movY = 0;
-            if (Input.GetButtonDown("Jump")) { movY += jump; }
-        }
+        Direction = inputCallback.mInput;
+        Direction = mCam.transform.forward * Direction.z + mCam.transform.right * Direction.x;
+        controller.Move(Direction * _speed * Time.deltaTime);
+    }
+    public void LookAround() 
+    {
+        Vision = inputCallback.mPos;
 
-        movY -= gravity;
->>>>>>> 33aa88607f67085f32a66562cec291e7840e15bb
+        xRotation -= Vision.y;
+        xRotation = Mathf.Clamp(xRotation, -70f, 70f);
+
+        mCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        controller.transform.Rotate(Vector3.up * Vision.x);
     }
 }
