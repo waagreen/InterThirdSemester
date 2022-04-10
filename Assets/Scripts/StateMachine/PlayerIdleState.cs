@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerBaseState
 {
-    public override void UpdateState(PlayerStateMachine player)
-    {
-        if(movX != 0 || movZ != 0) player.SwitchState(player.Moving);
-    }
+    public PlayerIdleState (PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base (currentContext, playerStateFactory) { isRootState = true; }
 
-    public override void EnterState(PlayerStateMachine playe)
+    public override void EnterState()
     {
-        
+        Debug.Log("IDLE");
+        _contex.Direction = Vector3.zero;
     }
-
-    public override void ExitState(PlayerStateMachine playe)
+    public override void UpdateState()
     {
-        throw new System.NotImplementedException();
+        CheckSwitchStates();
+    }
+    public override void ExitState()
+    {
+
+    }
+    public override void CheckSwitchStates()
+    {
+        if (_contex.IsMovePressed) ChangeState(_fact.Moving());
+    }
+    public override void InitializeSubState()
+    {
     }
 }

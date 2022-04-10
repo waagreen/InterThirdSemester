@@ -1,51 +1,20 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_FilePath: /Users/danielbisaggio/InterThirdSemester/Packages/manifest.json
-=======
-    m_FilePath: C:/Users/Microsoft/InterThirdSemester/Packages/manifest.json
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
     m_FilePath: C:/Inter/Packages/manifest.json
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      ticks: 637851224990000000
-    m_Hash: 3433666162
-  m_LockFileStatus:
-    m_FilePath: /Users/danielbisaggio/InterThirdSemester/Packages/packages-lock.json
-=======
-      ticks: 637851212331686489
-    m_Hash: 3019786458
-  m_LockFileStatus:
-    m_FilePath: C:/Users/Microsoft/InterThirdSemester/Packages/packages-lock.json
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
-      ticks: 637851208208595334
-    m_Hash: 3019786458
+      ticks: 637851427382196509
+    m_Hash: 2707773608
   m_LockFileStatus:
     m_FilePath: C:/Inter/Packages/packages-lock.json
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      ticks: 637851224990000000
-    m_Hash: 658588186
-=======
-      ticks: 637851212331716493
-=======
-      ticks: 637851208208605336
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
-    m_Hash: 468564355
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
+      ticks: 637851427382236524
+    m_Hash: 689383447
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -56,15 +25,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.6.11
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.cinemachine@2.6.11
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.cinemachine@2.6.11
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.cinemachine@2.6.11
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.cinemachine
       name: com.unity.cinemachine
       displayName: Cinemachine
@@ -223,15 +184,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.15.13
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.collab-proxy@1.15.13
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.collab-proxy@1.15.13
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.collab-proxy@1.15.13
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.collab-proxy
       name: com.unity.collab-proxy
       displayName: Version Control
@@ -364,15 +317,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.0.7
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.ide.rider@2.0.7
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.ide.rider@2.0.7
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.ide.rider@2.0.7
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.ide.rider
       name: com.unity.ide.rider
       displayName: JetBrains Rider Editor
@@ -482,20 +427,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
         revision: abb44f053e9a41d2e00e149e32a19bcec76e98b4
         path: 
-    - packageId: com.unity.ide.visualstudio@2.0.14
+    - packageId: com.unity.ide.visualstudio@2.0.15
       testable: 0
       isDirectDependency: 1
-      version: 2.0.14
+      version: 2.0.15
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.ide.visualstudio@2.0.14
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.ide.visualstudio@2.0.14
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
-      resolvedPath: C:\Inter\Library\PackageCache\com.unity.ide.visualstudio@2.0.14
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
+      resolvedPath: C:\Inter\Library\PackageCache\com.unity.ide.visualstudio@2.0.15
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -575,28 +512,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637782923640000000
+      datePublishedTicks: 637841884840000000
       documentationUrl: 
-      hasRepository: 0
+      hasRepository: 1
       repository:
-        type: 
-        url: 
-        revision: 
+        type: git
+        url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
+        revision: ca1ece42f5a2c5484ba15a15bb975ccc1f6a1a3c
         path: 
     - packageId: com.unity.ide.vscode@1.2.5
       testable: 0
       isDirectDependency: 1
       version: 1.2.5
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.ide.vscode@1.2.5
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.ide.vscode@1.2.5
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.ide.vscode@1.2.5
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.ide.vscode
       name: com.unity.ide.vscode
       displayName: Visual Studio Code Editor
@@ -664,20 +593,142 @@ m_PackageAssets:
         url: https://github.com/Unity-Technologies/com.unity.ide.vscode.git
         revision: b0740c80bfc2440527c317109f7c3d9100132722
         path: 
+    - packageId: com.unity.inputsystem@1.3.0
+      testable: 0
+      isDirectDependency: 1
+      version: 1.3.0
+      source: 1
+      resolvedPath: C:\Inter\Library\PackageCache\com.unity.inputsystem@1.3.0
+      assetPath: Packages/com.unity.inputsystem
+      name: com.unity.inputsystem
+      displayName: Input System
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: A new input system which can be used as a more extensible and
+        customizable alternative to Unity's classic input system in UnityEngine.Input.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.1.2-preview
+        - 0.2.0-preview
+        - 0.2.1-preview
+        - 0.2.6-preview
+        - 0.2.8-preview
+        - 0.2.10-preview
+        - 0.9.0-preview
+        - 0.9.1-preview
+        - 0.9.2-preview
+        - 0.9.3-preview
+        - 0.9.4-preview
+        - 0.9.5-preview
+        - 0.9.6-preview
+        - 1.0.0-preview
+        - 1.0.0-preview.1
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.0-preview.5
+        - 1.0.0-preview.6
+        - 1.0.0-preview.7
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
+        - 1.1.0-pre.5
+        - 1.1.0-pre.6
+        - 1.1.0-preview.1
+        - 1.1.0-preview.2
+        - 1.1.0-preview.3
+        - 1.1.1
+        - 1.2.0
+        - 1.3.0
+        compatible:
+        - 0.1.2-preview
+        - 0.2.0-preview
+        - 0.2.1-preview
+        - 0.2.6-preview
+        - 0.2.8-preview
+        - 0.2.10-preview
+        - 0.9.0-preview
+        - 0.9.1-preview
+        - 0.9.2-preview
+        - 0.9.3-preview
+        - 0.9.4-preview
+        - 0.9.5-preview
+        - 0.9.6-preview
+        - 1.0.0-preview
+        - 1.0.0-preview.1
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.0-preview.5
+        - 1.0.0-preview.6
+        - 1.0.0-preview.7
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
+        - 1.1.0-pre.5
+        - 1.1.0-pre.6
+        - 1.1.0-preview.1
+        - 1.1.0-preview.2
+        - 1.1.0-preview.3
+        - 1.1.1
+        - 1.2.0
+        - 1.3.0
+        verified: 1.3.0
+      dependencies:
+      - name: com.unity.modules.uielements
+        version: 1.0.0
+      resolvedDependencies:
+      - name: com.unity.modules.uielements
+        version: 1.0.0
+      - name: com.unity.modules.ui
+        version: 1.0.0
+      - name: com.unity.modules.imgui
+        version: 1.0.0
+      - name: com.unity.modules.jsonserialize
+        version: 1.0.0
+      - name: com.unity.modules.uielementsnative
+        version: 1.0.0
+      keywords:
+      - input
+      - events
+      - keyboard
+      - mouse
+      - gamepad
+      - touch
+      - vr
+      - xr
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637769972190000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.com/Unity-Technologies/InputSystem.git
+        revision: 76d3fd182183dff9e9793431de614fd1e69e363c
+        path: 
     - packageId: com.unity.postprocessing@3.2.1
       testable: 0
       isDirectDependency: 1
       version: 3.2.1
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.postprocessing@3.2.1
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.postprocessing@3.2.1
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.postprocessing@3.2.1
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.postprocessing
       name: com.unity.postprocessing
       displayName: Post Processing
@@ -770,15 +821,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 4.5.2
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.probuilder@4.5.2
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.probuilder@4.5.2
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.probuilder@4.5.2
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.probuilder
       name: com.unity.probuilder
       displayName: ProBuilder
@@ -920,15 +963,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 10.8.1
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.render-pipelines.high-definition@10.8.1
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.render-pipelines.high-definition@10.8.1
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.render-pipelines.high-definition@10.8.1
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.render-pipelines.high-definition
       name: com.unity.render-pipelines.high-definition
       displayName: High Definition RP
@@ -1106,15 +1141,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 10.8.1
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.shadergraph@10.8.1
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.shadergraph@10.8.1
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.shadergraph@10.8.1
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.shadergraph
       name: com.unity.shadergraph
       displayName: Shader Graph
@@ -1276,15 +1303,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.1.31
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.test-framework@1.1.31
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.test-framework@1.1.31
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.test-framework@1.1.31
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.test-framework
       name: com.unity.test-framework
       displayName: Test Framework
@@ -1381,15 +1400,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 3.0.6
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.textmeshpro@3.0.6
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.textmeshpro@3.0.6
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.textmeshpro@3.0.6
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.textmeshpro
       name: com.unity.textmeshpro
       displayName: TextMeshPro
@@ -1555,15 +1566,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.4.8
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.timeline@1.4.8
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.timeline@1.4.8
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.timeline@1.4.8
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.timeline
       name: com.unity.timeline
       displayName: Timeline
@@ -1729,15 +1732,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.ugui@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.ugui@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.ugui@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.ugui
       name: com.unity.ugui
       displayName: Unity UI
@@ -1800,15 +1795,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.ai@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.ai@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.ai@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.ai
       name: com.unity.modules.ai
       displayName: AI
@@ -1856,15 +1843,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.androidjni@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.androidjni@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.androidjni@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.androidjni
       name: com.unity.modules.androidjni
       displayName: Android JNI
@@ -1912,15 +1891,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.animation@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.animation@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.animation@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.animation
       name: com.unity.modules.animation
       displayName: Animation
@@ -1968,15 +1939,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.assetbundle@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.assetbundle
       name: com.unity.modules.assetbundle
       displayName: Asset Bundle
@@ -2024,15 +1987,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.audio@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.audio@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.audio@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.audio
       name: com.unity.modules.audio
       displayName: Audio
@@ -2080,15 +2035,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.cloth@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.cloth@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.cloth@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.cloth
       name: com.unity.modules.cloth
       displayName: Cloth
@@ -2140,15 +2087,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.director@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.director@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.director@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.director
       name: com.unity.modules.director
       displayName: Director
@@ -2204,15 +2143,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.imageconversion@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.imageconversion
       name: com.unity.modules.imageconversion
       displayName: Image Conversion
@@ -2261,15 +2192,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.imgui@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.imgui@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.imgui@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.imgui
       name: com.unity.modules.imgui
       displayName: IMGUI
@@ -2317,15 +2240,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.jsonserialize@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.jsonserialize
       name: com.unity.modules.jsonserialize
       displayName: JSONSerialize
@@ -2373,15 +2288,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.particlesystem@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.particlesystem
       name: com.unity.modules.particlesystem
       displayName: Particle System
@@ -2429,15 +2336,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.physics@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.physics@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.physics@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.physics
       name: com.unity.modules.physics
       displayName: Physics
@@ -2485,15 +2384,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.physics2d@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.physics2d@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.physics2d@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.physics2d
       name: com.unity.modules.physics2d
       displayName: Physics 2D
@@ -2541,15 +2432,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.screencapture@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.screencapture@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.screencapture@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.screencapture
       name: com.unity.modules.screencapture
       displayName: Screen Capture
@@ -2601,15 +2484,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.terrain@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.terrain@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.terrain@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.terrain
       name: com.unity.modules.terrain
       displayName: Terrain
@@ -2657,15 +2532,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.terrainphysics@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.terrainphysics
       name: com.unity.modules.terrainphysics
       displayName: Terrain Physics
@@ -2721,15 +2588,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.tilemap@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.tilemap@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.tilemap@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.tilemap
       name: com.unity.modules.tilemap
       displayName: Tilemap
@@ -2781,15 +2640,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.ui@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.ui@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.ui@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.ui
       name: com.unity.modules.ui
       displayName: UI
@@ -2837,15 +2688,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.uielements@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.uielements@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.uielements@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.uielements
       name: com.unity.modules.uielements
       displayName: UIElements
@@ -2909,15 +2752,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.umbra@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.umbra@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.umbra@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.umbra
       name: com.unity.modules.umbra
       displayName: Umbra
@@ -2965,15 +2800,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.unityanalytics@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.unityanalytics
       name: com.unity.modules.unityanalytics
       displayName: Unity Analytics
@@ -3029,15 +2856,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.unitywebrequest@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.unitywebrequest
       name: com.unity.modules.unitywebrequest
       displayName: Unity Web Request
@@ -3085,15 +2904,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.unitywebrequestassetbundle@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
       name: com.unity.modules.unitywebrequestassetbundle
       displayName: Unity Web Request Asset Bundle
@@ -3149,15 +2960,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.unitywebrequestaudio@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.unitywebrequestaudio
       name: com.unity.modules.unitywebrequestaudio
       displayName: Unity Web Request Audio
@@ -3213,15 +3016,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.unitywebrequesttexture@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.unitywebrequesttexture
       name: com.unity.modules.unitywebrequesttexture
       displayName: Unity Web Request Texture
@@ -3277,15 +3072,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.unitywebrequestwww@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.unitywebrequestwww
       name: com.unity.modules.unitywebrequestwww
       displayName: Unity Web Request WWW
@@ -3357,15 +3144,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.vehicles@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.vehicles@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.vehicles@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.vehicles
       name: com.unity.modules.vehicles
       displayName: Vehicles
@@ -3417,15 +3196,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.video@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.video@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.video@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.video
       name: com.unity.modules.video
       displayName: Video
@@ -3485,15 +3256,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.vr@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.vr@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.vr@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.vr
       name: com.unity.modules.vr
       displayName: VR
@@ -3555,15 +3318,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.wind@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.wind@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.wind@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.wind
       name: com.unity.modules.wind
       displayName: Wind
@@ -3611,15 +3366,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.xr@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.xr@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.xr@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.xr
       name: com.unity.modules.xr
       displayName: XR
@@ -3679,15 +3426,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.subsystems@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.subsystems@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.subsystems@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.subsystems
       name: com.unity.modules.subsystems
       displayName: Subsystems
@@ -3739,15 +3478,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.0
       source: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.modules.uielementsnative@1.0.0
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.modules.uielementsnative
       name: com.unity.modules.uielementsnative
       displayName: UIElements Native
@@ -3806,15 +3537,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.6
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.ext.nunit@1.0.6
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.ext.nunit@1.0.6
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.ext.nunit@1.0.6
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.ext.nunit
       name: com.unity.ext.nunit
       displayName: Custom NUnit
@@ -3877,15 +3600,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 10.8.1
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.render-pipelines.core@10.8.1
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.render-pipelines.core@10.8.1
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.render-pipelines.core@10.8.1
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.render-pipelines.core
       name: com.unity.render-pipelines.core
       displayName: Core RP Library
@@ -4048,15 +3763,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 4.3.2
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.searcher@4.3.2
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.searcher@4.3.2
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.searcher@4.3.2
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.searcher
       name: com.unity.searcher
       displayName: Searcher
@@ -4072,9 +3779,39 @@ m_PackageAssets:
       errors: []
       versions:
         all:
+        - 4.0.0-preview
+        - 4.0.0
+        - 4.0.7-preview
+        - 4.0.7
+        - 4.0.8-preview
+        - 4.0.9
+        - 4.1.0-preview
+        - 4.1.0
+        - 4.2.0
+        - 4.3.0
+        - 4.3.1
         - 4.3.2
+        - 4.6.0-preview
+        - 4.7.0-preview
+        - 4.9.1
+        - 4.9.2
         compatible:
+        - 4.0.0-preview
+        - 4.0.0
+        - 4.0.7-preview
+        - 4.0.7
+        - 4.0.8-preview
+        - 4.0.9
+        - 4.1.0-preview
+        - 4.1.0
+        - 4.2.0
+        - 4.3.0
+        - 4.3.1
         - 4.3.2
+        - 4.6.0-preview
+        - 4.7.0-preview
+        - 4.9.1
+        - 4.9.2
         verified: 4.3.2
       dependencies: []
       resolvedDependencies: []
@@ -4093,7 +3830,7 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637509898070000000
       documentationUrl: 
       hasRepository: 1
       repository:
@@ -4106,15 +3843,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 10.8.1
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.visualeffectgraph@10.8.1
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.visualeffectgraph@10.8.1
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.visualeffectgraph@10.8.1
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.visualeffectgraph
       name: com.unity.visualeffectgraph
       displayName: Visual Effect Graph
@@ -4253,15 +3982,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 10.8.1
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.render-pipelines.high-definition-config@10.8.1
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.render-pipelines.high-definition-config@10.8.1
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.render-pipelines.high-definition-config@10.8.1
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.render-pipelines.high-definition-config
       name: com.unity.render-pipelines.high-definition-config
       displayName: High Definition RP Config
@@ -4276,6 +3997,47 @@ m_PackageAssets:
       errors: []
       versions:
         all:
+        - 7.0.0
+        - 7.0.1
+        - 7.1.1
+        - 7.1.2
+        - 7.1.5
+        - 7.1.6
+        - 7.1.7
+        - 7.1.8
+        - 7.2.0
+        - 7.2.1
+        - 7.3.1
+        - 7.4.1
+        - 7.4.2
+        - 7.4.3
+        - 7.5.1
+        - 7.5.2
+        - 7.5.3
+        - 7.6.0
+        - 7.7.0
+        - 7.7.1
+        - 8.0.1
+        - 8.1.0
+        - 8.2.0
+        - 8.3.1
+        - 9.0.0-preview.15
+        - 9.0.0-preview.35
+        - 9.0.0-preview.57
+        - 9.0.0-preview.74
+        - 10.0.0-preview.27
+        - 10.1.0
+        - 10.2.0
+        - 10.2.1
+        - 10.2.2
+        - 10.3.1
+        - 10.3.2
+        - 10.4.0
+        - 10.5.0
+        - 10.5.1
+        - 10.6.0
+        - 10.7.0
+        - 10.8.0
         - 10.8.1
         compatible:
         - 10.8.1
@@ -4309,7 +4071,7 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637756824910000000
       documentationUrl: 
       hasRepository: 1
       repository:
@@ -4322,15 +4084,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.3
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.settings-manager@1.0.3
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.settings-manager@1.0.3
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.settings-manager@1.0.3
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.settings-manager
       name: com.unity.settings-manager
       displayName: Settings Manager
@@ -4346,9 +4100,23 @@ m_PackageAssets:
       errors: []
       versions:
         all:
+        - 0.1.0-preview.4
+        - 0.1.0-preview.8
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
         - 1.0.3
+        - 2.0.0
+        - 2.0.1
         compatible:
+        - 0.1.0-preview.4
+        - 0.1.0-preview.8
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
         - 1.0.3
+        - 2.0.0
+        - 2.0.1
         verified: 1.0.3
       dependencies: []
       resolvedDependencies: []
@@ -4365,12 +4133,12 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637300096300000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: https://github.com/Unity-Technologies/com.unity.settings-manager.git
+        url: git+https://github.com/Unity-Technologies/com.unity.settings-manager.git
         revision: 473664ccba1496294b741cf169740a5d54b3d0b6
         path: 
     - packageId: com.unity.services.core@1.0.1
@@ -4378,15 +4146,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.1
       source: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-      resolvedPath: /Users/danielbisaggio/InterThirdSemester/Library/PackageCache/com.unity.services.core@1.0.1
-=======
-      resolvedPath: C:\Users\Microsoft\InterThirdSemester\Library\PackageCache\com.unity.services.core@1.0.1
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-=======
       resolvedPath: C:\Inter\Library\PackageCache\com.unity.services.core@1.0.1
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1
       assetPath: Packages/com.unity.services.core
       name: com.unity.services.core
       displayName: Services Core
@@ -4456,14 +4216,5 @@ m_PackageAssets:
         path: 
   m_LocalPackages:
     m_LocalFileStatus: []
-<<<<<<< HEAD
-<<<<<<< HEAD
-m_ProjectPath: /Users/danielbisaggio/InterThirdSemester/Packages
-=======
-m_ProjectPath: C:/Users/Microsoft/InterThirdSemester/Packages
->>>>>>> 5713f6485c8a6d3a77f2afb476663f9446dea6b0
-m_EditorVersion: 2020.3.31f1 (6b54b7616050)
-=======
 m_ProjectPath: C:/Inter/Packages
 m_EditorVersion: 2020.3.32f1 (12f8b0834f07)
->>>>>>> 77540423df35fe0b98d9cbf2b11c6a434d5165f1

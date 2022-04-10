@@ -1,0 +1,34 @@
+{
+    "name": "MouseLook",
+    "maps": [
+        {
+            "name": "MouseLock",
+            "id": "acac0b49-233d-4c8b-9288-ae29128156a2",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "PassThrough",
+                    "id": "aae78677-488c-47ca-81d5-cbb2c40422fd",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "75a54dd0-2c2b-4bd9-810a-4f6e0735c1ef",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
