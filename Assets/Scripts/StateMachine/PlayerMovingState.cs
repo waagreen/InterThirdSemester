@@ -2,17 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovingState : MonoBehaviour
+public class PlayerMovingState : PlayerBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerMovingState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { isRootState = true; }
+
+    public override void EnterState()
     {
-        
+
+    }
+    public override void UpdateState() 
+    {
+        Debug.Log("MOVING");
+        CheckSwitchStates();
+        _contex.Moving();
+    }
+    public override void ExitState()
+    {
+
+    }
+    public override void CheckSwitchStates()
+    {
+        if (!_contex.IsMovePressed) ChangeState(_fact.Idle());
+    }
+    public override void InitializeSubState()
+    {
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
