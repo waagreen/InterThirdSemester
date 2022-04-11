@@ -11,13 +11,17 @@ public class PlayerStateMachine : MonoBehaviour
     public InputHandler inputCallback;
     public Camera mCam;
 
-    //variáveis (temporário: MUDAR PRA SCRIPTABLE OBJECT)
+    //variï¿½veis (temporï¿½rio: MUDAR PRA SCRIPTABLE OBJECT)
     private float _xRot = 0f;
     public float _gravity = -9.8f;
     public float _speed;
   
     private Vector3 move;
     private Vector3 grav;
+
+    //para pegar objetos
+    public Transform theDest;
+
 
     //getters setters
     public bool IsMovePressed { get => inputCallback._isMovePressed; }
@@ -58,5 +62,20 @@ public class PlayerStateMachine : MonoBehaviour
 
         if (!controller.isGrounded) grav.y += _gravity * Time.deltaTime;
         controller.Move(grav * Time.deltaTime);
+    }
+
+    public void OnMouseDown() //
+    {
+        GetComponent<Rigidbody>().useGravity = false;
+        this.transform.position = theDest.position;
+        this.transform.parent = GameObject.Find("Destination").transform;
+    }
+
+    public void OnMouseUp()
+    {
+        this.transform.parent = null;
+        GetComponent<Rigidbody>();.useGravity = true;
+
+
     }
 }
