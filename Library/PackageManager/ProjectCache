@@ -5,16 +5,26 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637852138350000000
     m_Hash: 2707773608
+=======
+      ticks: 637852073686615710
+    m_Hash: 1209214497
+>>>>>>> ad9083ada5c066f1de899d97b15d47030f8e2cf2
   m_LockFileStatus:
     m_FilePath: /Users/danielbisaggio/InterThirdSemester/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637852138350000000
     m_Hash: 689383447
+=======
+      ticks: 637852073686625715
+    m_Hash: 3566623744
+>>>>>>> ad9083ada5c066f1de899d97b15d47030f8e2cf2
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

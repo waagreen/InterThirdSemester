@@ -8,8 +8,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void EnterState()
     {
-        Debug.Log("IDLE");
-        _contex.Direction = Vector3.zero;
+
     }
     public override void UpdateState()
     {
