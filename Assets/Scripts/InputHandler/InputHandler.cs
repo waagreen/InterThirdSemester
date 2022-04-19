@@ -7,28 +7,46 @@ public class InputHandler : MonoBehaviour
 {
     private BaseMovement baseMove;
 
-    private static InputHandler _instance;
-    public static InputHandler Instance { get => _instance; }
-
-    public Vector2 mPos { get; private set; }
+    public Vector3 mPos { get; private set; }
     public Vector3 mInput { get; private set; }
-    public bool _isMovePressed { get; private set; }
+    [HideInInspector] public bool IsMovePressed;
 
     private void Awake()
     {
-        if (_instance != null && _instance != this) Destroy(this.gameObject);
-        else _instance = this;
-
         baseMove = new BaseMovement();
+
+        baseMove.KeyboardMouse.ComfortObject.started += PullComfortObject;
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
     public void OnMoveInput(InputAction.CallbackContext context)
     {
-        mInput = context.ReadValue<Vector3>();
-        _isMovePressed = mInput != Vector3.zero;
+        mInput = baseMove.KeyboardMouse.Movement.ReadValue<Vector3>();
+        IsMovePressed = mInput != Vector3.zero;
+    }
+    public void MouseInput(InputAction.CallbackContext context) 
+    {
+        mPos = baseMove.KeyboardMouse.Look.ReadValue<Vector2>();
+
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        Debug.DrawLine(ray.origin, ray.direction * 15f, Color.red);
+    }
+    public void PullComfortObject(InputAction.CallbackContext context) 
+    {
+        context.ReadValueAsButton();
+        Core.UI.CreateStressBar(Core.Data.stressLevel); 
+        Debug.Log("pressed COMFORT INPUT"); 
     }
 
-    private void OnEnable() => baseMove.Enable();
-    private void OnDisable() => baseMove.Disable();
+
+    private void OnEnable()
+    {
+        baseMove.Enable();
+    }
+    private void OnDisable() 
+    {
+        baseMove.Disable();
+        baseMove.KeyboardMouse.ComfortObject.started -= PullComfortObject;
+    }
 }

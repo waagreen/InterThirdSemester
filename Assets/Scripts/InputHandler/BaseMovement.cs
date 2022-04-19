@@ -46,10 +46,19 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MouseLock"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""b6b05feb-bc03-47f1-964d-4a69474fe5f6"",
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""e93c59ea-65b0-4d8e-a529-7c4e7ea00f4d"",
                     ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ComfortObject"",
+                    ""type"": ""Button"",
+                    ""id"": ""33a1d1ec-c9f5-4bc8-86ce-6d6aada50e29"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -146,12 +155,23 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""66caf86c-a28b-4232-9811-a96a502dff9d"",
+                    ""id"": ""373c3a61-db40-41e0-9289-6c39317dfad6"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MouseLock"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f3178678-36bf-47b6-a639-ee18a22a28fe"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ComfortObject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -164,7 +184,8 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
         m_KeyboardMouse = asset.FindActionMap("Keyboard & Mouse", throwIfNotFound: true);
         m_KeyboardMouse_Movement = m_KeyboardMouse.FindAction("Movement", throwIfNotFound: true);
         m_KeyboardMouse_Run = m_KeyboardMouse.FindAction("Run", throwIfNotFound: true);
-        m_KeyboardMouse_MouseLock = m_KeyboardMouse.FindAction("MouseLock", throwIfNotFound: true);
+        m_KeyboardMouse_Look = m_KeyboardMouse.FindAction("Look", throwIfNotFound: true);
+        m_KeyboardMouse_ComfortObject = m_KeyboardMouse.FindAction("ComfortObject", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -226,14 +247,16 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
     private IKeyboardMouseActions m_KeyboardMouseActionsCallbackInterface;
     private readonly InputAction m_KeyboardMouse_Movement;
     private readonly InputAction m_KeyboardMouse_Run;
-    private readonly InputAction m_KeyboardMouse_MouseLock;
+    private readonly InputAction m_KeyboardMouse_Look;
+    private readonly InputAction m_KeyboardMouse_ComfortObject;
     public struct KeyboardMouseActions
     {
         private @BaseMovement m_Wrapper;
         public KeyboardMouseActions(@BaseMovement wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_KeyboardMouse_Movement;
         public InputAction @Run => m_Wrapper.m_KeyboardMouse_Run;
-        public InputAction @MouseLock => m_Wrapper.m_KeyboardMouse_MouseLock;
+        public InputAction @Look => m_Wrapper.m_KeyboardMouse_Look;
+        public InputAction @ComfortObject => m_Wrapper.m_KeyboardMouse_ComfortObject;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardMouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -249,9 +272,12 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                 @Run.started -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnRun;
                 @Run.performed -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnRun;
                 @Run.canceled -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnRun;
-                @MouseLock.started -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnMouseLock;
-                @MouseLock.performed -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnMouseLock;
-                @MouseLock.canceled -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnMouseLock;
+                @Look.started -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnLook;
+                @ComfortObject.started -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnComfortObject;
+                @ComfortObject.performed -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnComfortObject;
+                @ComfortObject.canceled -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnComfortObject;
             }
             m_Wrapper.m_KeyboardMouseActionsCallbackInterface = instance;
             if (instance != null)
@@ -262,9 +288,12 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                 @Run.started += instance.OnRun;
                 @Run.performed += instance.OnRun;
                 @Run.canceled += instance.OnRun;
-                @MouseLock.started += instance.OnMouseLock;
-                @MouseLock.performed += instance.OnMouseLock;
-                @MouseLock.canceled += instance.OnMouseLock;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
+                @ComfortObject.started += instance.OnComfortObject;
+                @ComfortObject.performed += instance.OnComfortObject;
+                @ComfortObject.canceled += instance.OnComfortObject;
             }
         }
     }
@@ -273,6 +302,7 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
-        void OnMouseLock(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
+        void OnComfortObject(InputAction.CallbackContext context);
     }
 }

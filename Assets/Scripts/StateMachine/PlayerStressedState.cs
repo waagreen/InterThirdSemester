@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovingState : PlayerBaseState
+public class PlayerStressedState : PlayerBaseState
 {
-    public PlayerMovingState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { isRootState = true; }
+    public PlayerStressedState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { isRootState = false; }
 
     public override void EnterState()
     {
-
+        
     }
     public override void UpdateState() 
     {
-        Debug.Log("MOVING");
         CheckSwitchStates();
     }
     public override void ExitState()

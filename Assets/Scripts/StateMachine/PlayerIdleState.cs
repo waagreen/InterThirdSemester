@@ -20,7 +20,7 @@ public class PlayerIdleState : PlayerBaseState
     }
     public override void CheckSwitchStates()
     {
-        if (_contex.IsMovePressed) ChangeState(_fact.Moving());
+        if (Core.Controller.IsMovePressed) ChangeState(_fact.Moving());
     }
     public override void InitializeSubState()
     {
