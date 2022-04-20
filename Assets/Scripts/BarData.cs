@@ -46,4 +46,6 @@ public class BarData : MonoBehaviour
         aMove.Append(arrowTransform.DOMoveX(endPos.position.x, speed));
         aMove.Play().SetLoops(-1, LoopType.Restart);
     }
+
+    public float GetRandomRectWidth() => Random.Range(100f, 650f); 
 }
