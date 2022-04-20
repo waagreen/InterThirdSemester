@@ -7,18 +7,12 @@ public class InputHandler : MonoBehaviour
 {
     private BaseMovement baseMove;
 
-    private static InputHandler _instance;
-    public static InputHandler Instance { get => _instance; }
-
     public Vector2 mPos { get; private set; }
     public Vector3 mInput { get; private set; }
     public bool _isMovePressed { get; private set; }
 
     private void Awake()
     {
-        if (_instance != null && _instance != this) Destroy(this.gameObject);
-        else _instance = this;
-
         baseMove = new BaseMovement();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

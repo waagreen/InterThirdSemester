@@ -11,17 +11,8 @@ public class PlayerStateMachine : MonoBehaviour
     public InputHandler inputCallback;
     public Camera mCam;
 
-    //variáveis (temporário: MUDAR PRA SCRIPTABLE OBJECT)
-    private float _xRot = 0f;
-    public float _gravity = -9.8f;
-    public float _speed;
-  
-    private Vector3 move;
-    private Vector3 grav;
-
     //getters setters
     public bool IsMovePressed { get => inputCallback._isMovePressed; }
-    public float xRotation { get => _xRot; set { _xRot = value; } }
 
     public PlayerBaseState CurrentContext
     {
@@ -43,20 +34,22 @@ public class PlayerStateMachine : MonoBehaviour
     public void Update()
     {
         _currentState.UpdateState();
+        Gravity();
     }
 
     public void Moving()
     {
-        move = Vector3.zero;
+        Core.Data.move = Vector3.zero;
 
-        move = inputCallback.mInput;
-        move = mCam.transform.forward * move.z + mCam.transform.right * move.x;
+        Core.Data.move = inputCallback.mInput;
+        Core.Data.move = mCam.transform.forward * Core.Data.move.z + mCam.transform.right * Core.Data.move.x;
 
-        controller.Move(move * _speed * Time.deltaTime);
+        controller.Move(Core.Data.move * Core.Data._speed * Time.deltaTime);
+    }
 
-
-
-        if (!controller.isGrounded) grav.y += _gravity * Time.deltaTime;
-        controller.Move(grav * Time.deltaTime);
+    public void Gravity() 
+    {
+        if (!controller.isGrounded) Core.Data.grav.y += Core.Data._gravity * Time.deltaTime;
+        controller.Move(Core.Data.grav * Time.deltaTime);
     }
 }
