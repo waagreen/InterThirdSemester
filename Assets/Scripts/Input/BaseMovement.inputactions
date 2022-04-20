@@ -24,10 +24,19 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MouseLock",
-                    "type": "PassThrough",
-                    "id": "b6b05feb-bc03-47f1-964d-4a69474fe5f6",
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "e93c59ea-65b0-4d8e-a529-7c4e7ea00f4d",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ComfortObject",
+                    "type": "Button",
+                    "id": "33a1d1ec-c9f5-4bc8-86ce-6d6aada50e29",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -124,12 +133,23 @@
                 },
                 {
                     "name": "",
-                    "id": "66caf86c-a28b-4232-9811-a96a502dff9d",
+                    "id": "373c3a61-db40-41e0-9289-6c39317dfad6",
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MouseLock",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3178678-36bf-47b6-a639-ee18a22a28fe",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ComfortObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

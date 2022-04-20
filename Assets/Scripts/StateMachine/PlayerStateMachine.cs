@@ -12,7 +12,7 @@ public class PlayerStateMachine : MonoBehaviour
     public Camera mCam;
 
     //getters setters
-    public bool IsMovePressed { get => inputCallback._isMovePressed; }
+    public bool IsMovePressed { get => inputCallback.IsMovePressed; }
 
     public PlayerBaseState CurrentContext
     {
