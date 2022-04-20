@@ -990,7 +990,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28386
+  m_Name: pb_Mesh29294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4740,8 +4740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barHolder: {fileID: 1786045151}
-  stress: {fileID: 0}
-  point: {fileID: 0}
+  stress: {fileID: 7220740726242565794, guid: 56e9cbcaaa518e749b10e7d78ebadfe0, type: 3}
+  point: {fileID: 5039110463511039851, guid: 78aa9d57edac79a4a82a8fb3efd27b3a, type: 3}
 --- !u!114 &1868763419
 MonoBehaviour:
   m_ObjectHideFlags: 0
