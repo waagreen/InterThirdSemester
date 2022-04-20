@@ -12,7 +12,6 @@ public class PlayerMovingState : PlayerBaseState
     }
     public override void UpdateState() 
     {
-        Debug.Log("MOVING");
         CheckSwitchStates();
         _contex.Moving();
     }
