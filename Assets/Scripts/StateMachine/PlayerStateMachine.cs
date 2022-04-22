@@ -25,7 +25,7 @@ public class PlayerStateMachine : MonoBehaviour
     //personagem sempre inicia no IDLE STATE
     public void Awake()
     {
-        Core.Data.stressLevel = 3;
+        Core.Data.stressLevel = 4;
         fState = new PlayerStateFactory(this);
         cState = fState.Idle();
         cState.EnterState();
@@ -52,6 +52,4 @@ public class PlayerStateMachine : MonoBehaviour
         if (controller.isGrounded == false) Core.Data.grav.y += Core.Data._gravity * Time.deltaTime;
         controller.Move(Core.Data.grav * Time.deltaTime);
     }
-
-    public void DestroyObject(GameObject obj) => Destroy(obj); 
 }

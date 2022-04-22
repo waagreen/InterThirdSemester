@@ -25,7 +25,7 @@ public class UiSystem : MonoBehaviour
     {
         if (isStressed) return;
 
-        if (stressLevel >= 4) activeBar = stress.BarSetup(barHolder, Color.red, 1f, 5);
+        if (stressLevel >= 4) activeBar = stress.BarSetup(barHolder, Color.red, .9f, 5);
         else if (stressLevel >= 3) activeBar = stress.BarSetup(barHolder, Color.yellow, 1.4f, 4);
         else if (stressLevel >= 2) activeBar = stress.BarSetup(barHolder, Color.blue, 1.7f, 3);
         else activeBar = stress.BarSetup(barHolder, Color.cyan, 2.1f, 3);
