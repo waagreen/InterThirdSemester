@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class PlayerMovingState : PlayerBaseState
 {
-    public PlayerMovingState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { isRootState = true; }
+    public PlayerMovingState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory, 1) { isRootState = true; }
 
     public override void EnterState()
     {
-
+        InitializeSubState();
+        Debug.Log("MOVING");
     }
     public override void UpdateState() 
     {
-        CheckSwitchStates();
         _contex.Moving();
+        CheckSwitchStates();
     }
     public override void ExitState()
     {
@@ -25,6 +26,7 @@ public class PlayerMovingState : PlayerBaseState
     }
     public override void InitializeSubState()
     {
+        if (Core.Data.isInteracting) ChangeState(_fact.Interacting());
     }
 
 }

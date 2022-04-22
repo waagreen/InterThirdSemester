@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerBaseState
 {
-    public PlayerIdleState (PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base (currentContext, playerStateFactory) { isRootState = true; }
+    public PlayerIdleState (PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base (currentContext, playerStateFactory, 2) { isRootState = true; }
 
     public override void EnterState()
     {
-
+        InitializeSubState();
+        Debug.Log("IDLE");
     }
     public override void UpdateState()
     {
@@ -24,5 +25,6 @@ public class PlayerIdleState : PlayerBaseState
     }
     public override void InitializeSubState()
     {
+        if (Core.Data.isInteracting) ChangeState(_fact.Interacting());
     }
 }

@@ -2,42 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 public class UiSystem : MonoBehaviour
 {
+    [HideInInspector] public StressBar activeBar;
+    public StressBar stress;
+    public PointBehaviour point;
+    public List<GameObject> points = new List<GameObject>();
+    public UnityEvent OnMiniGameEnd = new UnityEvent();
+
     [SerializeField] private Transform barHolder;
-    
-    public BarData stress;
-
-    public RectTransform point;
-
     private bool isStressed = false;
-    private BarData activeBar;
 
-    public void CreateStressBar(float stressLevel)
+    private void Awake() 
+    {
+        OnMiniGameEnd.AddListener(EndStressGame);    
+    }
+
+    public void CreateStressBar(int stressLevel)
     {
         if (isStressed) return;
 
-        if (stressLevel >= 0.75f) activeBar = stress.BarSetup(barHolder, Color.red, 3f, 5);
-        else if (stressLevel >= 0.50f) activeBar = stress.BarSetup(barHolder, Color.yellow, 7f, 4);
-        else if (stressLevel >= 0.25f) activeBar = stress.BarSetup(barHolder, Color.blue, 15f, 3);
-        else activeBar = stress.BarSetup(barHolder, Color.cyan, 20f, 3);
+        if (stressLevel >= 4) activeBar = stress.BarSetup(barHolder, Color.red, 1f, 5);
+        else if (stressLevel >= 3) activeBar = stress.BarSetup(barHolder, Color.yellow, 1.4f, 4);
+        else if (stressLevel >= 2) activeBar = stress.BarSetup(barHolder, Color.blue, 1.7f, 3);
+        else activeBar = stress.BarSetup(barHolder, Color.cyan, 2.1f, 3);
 
-        CreatePoints(activeBar.nPoints, activeBar.GetRandomRectWidth());
+
+        activeBar.ArrowMove(activeBar.arrowSpeed);
+        for (int i = 0; i < activeBar.nPoints; i++)
+        {
+            var a = CreatePoints(activeBar.GetRandomRectWidth(), activeBar.barColor);
+            points.Add(a);
+        }
+
         isStressed = true;
     }
 
-
-    public void CreatePoints(int nPoints, float nWidth)
+    public GameObject CreatePoints(float nWidth, Color color)
     {
-        for (int i = 0; i < nPoints; i++)
-        {
-            Debug.Log($"Instaciate {i} bars: ");
-            var a = Instantiate(point, new Vector3(Random.Range(activeBar.startPos.position.x, activeBar.endPos.position.x), 0.5f, 0f), transform.rotation, activeBar.barTransform.transform);
-            a.sizeDelta = new Vector2(nWidth, 0);
-            a.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 0f, activeBar.barTransform.rect.size.y * 2);
-            a.SetAsFirstSibling();
-        }
+        var a = Instantiate(point, new Vector3(Random.Range(activeBar.startPos.position.x, activeBar.endPos.position.x), 0.5f, 0f), transform.rotation, activeBar.barTransform.transform);
+        a.body.sizeDelta = new Vector2(nWidth, 0);
+        a.body.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 0f, activeBar.barTransform.rect.size.y * 2);
+        a.body.SetAsFirstSibling();
+        a.pointColor.color = color;
+        
+        return a.gameObject;
+    }
+
+    private void EndStressGame()
+    {
+        activeBar.gameObject.SetActive(false);
+        Core.Data.isInteracting = false;
+    }
+
+    public void CheckMiniGameEnd()
+    {
+        if(points.Count == 0 && activeBar != null) OnMiniGameEnd.Invoke();
     }
 }

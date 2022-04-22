@@ -1,8 +1,9 @@
-﻿{
+{
     "files.exclude":
     {
         "**/.DS_Store":true,
         "**/.git":true,
+        "**/.gitignore":false,
         "**/.gitmodules":true,
         "**/*.booproj":true,
         "**/*.pidb":true,
@@ -20,7 +21,7 @@
         "**/*.ico":true,
         "**/*.jpg":true,
         "**/*.jpeg":true,
-        "**/*.png":true,
+        "**/*.png":false,
         "**/*.psd":true,
         "**/*.tga":true,
         "**/*.tif":true,
@@ -42,10 +43,8 @@
         "**/*.meta":true,
         "**/*.prefab":true,
         "**/*.unity":true,
-        "build/":true,
-        "Build/":true,
-        "Library/":true,
-        "library/":true,
+        "Library/":false,
+        "library/":false,
         "obj/":true,
         "Obj/":true,
         "ProjectSettings/":true,

@@ -5,8 +5,7 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    private BaseMovement baseMove;
-
+    [HideInInspector] public BaseMovement baseMove;
     public Vector3 mPos { get; private set; }
     public Vector3 mInput { get; private set; }
     [HideInInspector] public bool IsMovePressed;
@@ -16,7 +15,6 @@ public class InputHandler : MonoBehaviour
         baseMove = new BaseMovement();
 
         baseMove.KeyboardMouse.ComfortObject.started += PullComfortObject;
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -32,11 +30,14 @@ public class InputHandler : MonoBehaviour
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         Debug.DrawLine(ray.origin, ray.direction * 15f, Color.red);
     }
-    public void PullComfortObject(InputAction.CallbackContext context) 
+    public void Interaction(InputAction.CallbackContext context) 
     {
         context.ReadValueAsButton();
-        Core.UI.CreateStressBar(Core.Data.stressLevel); 
-        Debug.Log("pressed COMFORT INPUT"); 
+    }
+    public void PullComfortObject(InputAction.CallbackContext context)
+    {
+        context.ReadValueAsButton();
+        if(Core.Ctx.CurrentContext._stateNum < 5) Core.Data.isInteracting = true;
     }
 
 
@@ -44,9 +45,9 @@ public class InputHandler : MonoBehaviour
     {
         baseMove.Enable();
     }
-    private void OnDisable() 
+    private void OnDisable()
     {
-        baseMove.Disable();
         baseMove.KeyboardMouse.ComfortObject.started -= PullComfortObject;
+        baseMove.Disable();
     }
 }
