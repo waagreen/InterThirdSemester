@@ -34,7 +34,7 @@ public class InputHandler : MonoBehaviour
     }
     public void PullComfortObject(InputAction.CallbackContext context) 
     {
-        context.ReadValueAsButton();
+        baseMove.KeyboardMouse.ComfortObject.ReadValueAsButton();
         Core.UI.CreateStressBar(Core.Data.stressLevel); 
         Debug.Log("pressed COMFORT INPUT"); 
     }

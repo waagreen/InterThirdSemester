@@ -62,6 +62,15 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Tiro"",
+                    ""type"": ""Button"",
+                    ""id"": ""2aa24725-c96c-4c15-b108-39fe9d991368"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -174,6 +183,17 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                     ""action"": ""ComfortObject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0efd7f0d-a038-401a-bb8c-b448cd305023"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tiro"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -186,6 +206,7 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
         m_KeyboardMouse_Run = m_KeyboardMouse.FindAction("Run", throwIfNotFound: true);
         m_KeyboardMouse_Look = m_KeyboardMouse.FindAction("Look", throwIfNotFound: true);
         m_KeyboardMouse_ComfortObject = m_KeyboardMouse.FindAction("ComfortObject", throwIfNotFound: true);
+        m_KeyboardMouse_Tiro = m_KeyboardMouse.FindAction("Tiro", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +270,7 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyboardMouse_Run;
     private readonly InputAction m_KeyboardMouse_Look;
     private readonly InputAction m_KeyboardMouse_ComfortObject;
+    private readonly InputAction m_KeyboardMouse_Tiro;
     public struct KeyboardMouseActions
     {
         private @BaseMovement m_Wrapper;
@@ -257,6 +279,7 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
         public InputAction @Run => m_Wrapper.m_KeyboardMouse_Run;
         public InputAction @Look => m_Wrapper.m_KeyboardMouse_Look;
         public InputAction @ComfortObject => m_Wrapper.m_KeyboardMouse_ComfortObject;
+        public InputAction @Tiro => m_Wrapper.m_KeyboardMouse_Tiro;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardMouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -278,6 +301,9 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                 @ComfortObject.started -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnComfortObject;
                 @ComfortObject.performed -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnComfortObject;
                 @ComfortObject.canceled -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnComfortObject;
+                @Tiro.started -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnTiro;
+                @Tiro.performed -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnTiro;
+                @Tiro.canceled -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnTiro;
             }
             m_Wrapper.m_KeyboardMouseActionsCallbackInterface = instance;
             if (instance != null)
@@ -294,6 +320,9 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                 @ComfortObject.started += instance.OnComfortObject;
                 @ComfortObject.performed += instance.OnComfortObject;
                 @ComfortObject.canceled += instance.OnComfortObject;
+                @Tiro.started += instance.OnTiro;
+                @Tiro.performed += instance.OnTiro;
+                @Tiro.canceled += instance.OnTiro;
             }
         }
     }
@@ -304,5 +333,6 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
         void OnRun(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnComfortObject(InputAction.CallbackContext context);
+        void OnTiro(InputAction.CallbackContext context);
     }
 }
