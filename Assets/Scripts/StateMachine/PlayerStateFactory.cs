@@ -19,7 +19,7 @@ public class PlayerStateFactory
         _context = currentContext;
         _states[PlayerState.idle] = new PlayerIdleState(_context, this);
         _states[PlayerState.moving] = new PlayerMovingState(_context, this);
-        _states[PlayerState.interacting] = new PlayerInteractingSubState(_context, this);
+        _states[PlayerState.interacting] = new PlayerComfortingSubState(_context, this);
         _states[PlayerState.passive] = new PlayerPassiveSubState(_context, this);
         _states[PlayerState.holding] = new PlayerHoldingSubState(_context, this);
     }
@@ -27,6 +27,6 @@ public class PlayerStateFactory
     public PlayerBaseState Idle() => _states[PlayerState.idle];
     public PlayerBaseState Moving() => _states[PlayerState.moving];
     public PlayerBaseState Passive() => _states[PlayerState.passive];
-    public PlayerBaseState Interacting() => _states[PlayerState.interacting];
+    public PlayerBaseState Comforting() => _states[PlayerState.interacting];
     public PlayerBaseState Holding() => _states[PlayerState.holding];
 }

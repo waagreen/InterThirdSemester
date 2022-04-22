@@ -8,8 +8,8 @@ public class PlayerPassiveSubState : PlayerBaseState
 
     public override void EnterState()
     {
-        Debug.Log("PASSIVE");
-        Core.Data.isInteracting = false; 
+        Core.Data.isComforting = false;
+        Core.Data.isHolding = false; 
     }
     
     public override void UpdateState()
@@ -19,7 +19,8 @@ public class PlayerPassiveSubState : PlayerBaseState
 
     public override void CheckSwitchStates()
     {
-
+        if(Core.Data.isComforting) ChangeState(_fact.Comforting());
+        else if(Core.Data.isHolding) ChangeState(_fact.Holding());
     }
 
     public override void ExitState()

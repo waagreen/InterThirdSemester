@@ -55,11 +55,16 @@ public class UiSystem : MonoBehaviour
     private void EndStressGame()
     {
         activeBar.gameObject.SetActive(false);
-        Core.Data.isInteracting = false;
+        Core.Data.isComforting = false;
     }
 
     public void CheckMiniGameEnd()
     {
         if(points.Count == 0 && activeBar != null) OnMiniGameEnd.Invoke();
+    }
+
+    private void OnDisable() {
+        
+        OnMiniGameEnd.RemoveAllListeners();    
     }
 }

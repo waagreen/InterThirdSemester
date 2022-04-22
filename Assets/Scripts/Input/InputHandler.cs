@@ -6,15 +6,19 @@ using UnityEngine.InputSystem;
 public class InputHandler : MonoBehaviour
 {
     [HideInInspector] public BaseMovement baseMove;
+    [HideInInspector] public bool IsMovePressed;
     public Vector3 mPos { get; private set; }
     public Vector3 mInput { get; private set; }
-    [HideInInspector] public bool IsMovePressed;
+    public Cinemachine.CinemachineInputProvider mLook;
+    public InputActionReference mZero;
+    public InputActionReference mFollow;
 
     private void Awake()
     {
         baseMove = new BaseMovement();
 
         baseMove.KeyboardMouse.ComfortObject.started += PullComfortObject;
+        baseMove.KeyboardMouse.PickUp.started += Interaction;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -37,7 +41,7 @@ public class InputHandler : MonoBehaviour
     public void PullComfortObject(InputAction.CallbackContext context)
     {
         context.ReadValueAsButton();
-        if(Core.Ctx.CurrentContext._stateNum < 5) Core.Data.isInteracting = true;
+        if(Core.Ctx.CurrentContext._stateNum < 5) Core.Data.isComforting = true;
     }
 
 

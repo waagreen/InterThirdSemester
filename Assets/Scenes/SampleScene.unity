@@ -999,7 +999,7 @@ GameObject:
   - component: {fileID: 468760158}
   - component: {fileID: 468760160}
   m_Layer: 0
-  m_Name: CM vcam1
+  m_Name: V_CAM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4263,6 +4263,10 @@ MonoBehaviour:
   activeBar: {fileID: 0}
   stress: {fileID: 7220740726242565794, guid: 56e9cbcaaa518e749b10e7d78ebadfe0, type: 3}
   point: {fileID: 1934519371528478452, guid: 78aa9d57edac79a4a82a8fb3efd27b3a, type: 3}
+  points: []
+  OnMiniGameEnd:
+    m_PersistentCalls:
+      m_Calls: []
   barHolder: {fileID: 575007452}
 --- !u!114 &1315466534
 MonoBehaviour:
@@ -4293,6 +4297,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsMovePressed: 0
+  mLook: {fileID: 468760160}
+  mZero: {fileID: -7752584131485574801, guid: aaa2c8ed2c4901547b69f66aa3911215, type: 3}
+  mFollow: {fileID: -4194600654756952792, guid: aaa2c8ed2c4901547b69f66aa3911215, type: 3}
 --- !u!114 &1315466536
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -62,6 +62,24 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""bd3f7701-2787-4588-9c64-bf9f8719a66e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""None"",
+                    ""type"": ""Value"",
+                    ""id"": ""f2006f42-d045-4ae6-baee-8b97cc3884a6"",
+                    ""expectedControlType"": ""Touch"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -174,6 +192,28 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                     ""action"": ""ComfortObject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b3a3be74-ead0-4411-b22b-5a59bcd5b818"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f991fc8-4044-49b4-8c69-736d9548a34e"",
+                    ""path"": ""<Sensor>"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""None"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -186,6 +226,8 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
         m_KeyboardMouse_Run = m_KeyboardMouse.FindAction("Run", throwIfNotFound: true);
         m_KeyboardMouse_Look = m_KeyboardMouse.FindAction("Look", throwIfNotFound: true);
         m_KeyboardMouse_ComfortObject = m_KeyboardMouse.FindAction("ComfortObject", throwIfNotFound: true);
+        m_KeyboardMouse_PickUp = m_KeyboardMouse.FindAction("PickUp", throwIfNotFound: true);
+        m_KeyboardMouse_None = m_KeyboardMouse.FindAction("None", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +291,8 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyboardMouse_Run;
     private readonly InputAction m_KeyboardMouse_Look;
     private readonly InputAction m_KeyboardMouse_ComfortObject;
+    private readonly InputAction m_KeyboardMouse_PickUp;
+    private readonly InputAction m_KeyboardMouse_None;
     public struct KeyboardMouseActions
     {
         private @BaseMovement m_Wrapper;
@@ -257,6 +301,8 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
         public InputAction @Run => m_Wrapper.m_KeyboardMouse_Run;
         public InputAction @Look => m_Wrapper.m_KeyboardMouse_Look;
         public InputAction @ComfortObject => m_Wrapper.m_KeyboardMouse_ComfortObject;
+        public InputAction @PickUp => m_Wrapper.m_KeyboardMouse_PickUp;
+        public InputAction @None => m_Wrapper.m_KeyboardMouse_None;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardMouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -278,6 +324,12 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                 @ComfortObject.started -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnComfortObject;
                 @ComfortObject.performed -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnComfortObject;
                 @ComfortObject.canceled -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnComfortObject;
+                @PickUp.started -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnPickUp;
+                @PickUp.performed -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnPickUp;
+                @PickUp.canceled -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnPickUp;
+                @None.started -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnNone;
+                @None.performed -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnNone;
+                @None.canceled -= m_Wrapper.m_KeyboardMouseActionsCallbackInterface.OnNone;
             }
             m_Wrapper.m_KeyboardMouseActionsCallbackInterface = instance;
             if (instance != null)
@@ -294,6 +346,12 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
                 @ComfortObject.started += instance.OnComfortObject;
                 @ComfortObject.performed += instance.OnComfortObject;
                 @ComfortObject.canceled += instance.OnComfortObject;
+                @PickUp.started += instance.OnPickUp;
+                @PickUp.performed += instance.OnPickUp;
+                @PickUp.canceled += instance.OnPickUp;
+                @None.started += instance.OnNone;
+                @None.performed += instance.OnNone;
+                @None.canceled += instance.OnNone;
             }
         }
     }
@@ -304,5 +362,7 @@ public partial class @BaseMovement : IInputActionCollection2, IDisposable
         void OnRun(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnComfortObject(InputAction.CallbackContext context);
+        void OnPickUp(InputAction.CallbackContext context);
+        void OnNone(InputAction.CallbackContext context);
     }
 }

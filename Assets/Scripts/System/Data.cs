@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Data : MonoBehaviour
 {
-    [HideInInspector] public bool isInteracting = false;
+    [HideInInspector] public bool isComforting = false;
+    [HideInInspector] public bool isHolding = false;
     [HideInInspector] public Vector3 grav;
     [HideInInspector] public Vector3 move;
     [Header("Movement Variables")]

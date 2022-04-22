@@ -24,7 +24,7 @@ public abstract class PlayerBaseState
     public void UpdateStates() 
     {
         UpdateState();
-        if (_currentSubState != null) _currentSubState.UpdateStates();
+        if (_currentSubState != null) _currentSubState.UpdateState();
     }
     protected void ChangeState(PlayerBaseState newState) 
     {

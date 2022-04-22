@@ -8,24 +8,22 @@ public class PlayerHoldingSubState : PlayerBaseState
 
     public override void EnterState()
     {
-        throw new System.NotImplementedException();
     }
 
     public override void UpdateState()
     {
-        throw new System.NotImplementedException();
+
     }
     public override void CheckSwitchStates()
     {
-        throw new System.NotImplementedException();
+        if (Core.Data.isComforting == false && Core.Data.isHolding == false) ChangeState(_fact.Passive());
     }
     public override void ExitState()
     {
-        throw new System.NotImplementedException();
     }
 
     public override void InitializeSubState()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

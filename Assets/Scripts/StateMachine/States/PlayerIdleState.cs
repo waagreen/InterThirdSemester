@@ -9,7 +9,6 @@ public class PlayerIdleState : PlayerBaseState
     public override void EnterState()
     {
         InitializeSubState();
-        Debug.Log("IDLE");
     }
     public override void UpdateState()
     {
@@ -25,6 +24,8 @@ public class PlayerIdleState : PlayerBaseState
     }
     public override void InitializeSubState()
     {
-        if (Core.Data.isInteracting) ChangeState(_fact.Interacting());
+        if (Core.Data.isComforting == false && Core.Data.isHolding == false) SetSubState(_fact.Passive());
+        else if(Core.Data.isComforting == false && Core.Data.isHolding == true) SetSubState(_fact.Holding());
+        else if(Core.Data.isComforting == true && !Core.Data.isHolding == false) SetSubState(_fact.Comforting());
     }
 }

@@ -34,7 +34,7 @@ public class PlayerStateMachine : MonoBehaviour
     public void Update()
     {
         Gravity();
-        cState.UpdateState();
+        cState.UpdateStates();
     }
 
     public void Moving()
