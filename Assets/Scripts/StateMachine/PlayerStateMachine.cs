@@ -49,7 +49,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     public void Gravity() 
     {
-        if (!controller.isGrounded) Core.Data.grav.y += Core.Data._gravity * Time.deltaTime;
+        if (controller.isGrounded == false) Core.Data.grav.y += Core.Data._gravity * Time.deltaTime;
         controller.Move(Core.Data.grav * Time.deltaTime);
     }
 }
