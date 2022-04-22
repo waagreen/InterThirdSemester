@@ -42,21 +42,13 @@
                     "initialStateCheck": false
                 },
                 {
-<<<<<<< HEAD
-                    "name": "Tiro",
-                    "type": "Button",
-                    "id": "2aa24725-c96c-4c15-b108-39fe9d991368",
-=======
                     "name": "PickUp",
                     "type": "Button",
                     "id": "bd3f7701-2787-4588-9c64-bf9f8719a66e",
->>>>>>> 99e3685e7fc462cb77a475b702bcd36b55829e65
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-<<<<<<< HEAD
-=======
                 },
                 {
                     "name": "None",
@@ -66,7 +58,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
->>>>>>> 99e3685e7fc462cb77a475b702bcd36b55829e65
                 }
             ],
             "bindings": [
@@ -182,14 +173,6 @@
                 },
                 {
                     "name": "",
-<<<<<<< HEAD
-                    "id": "0efd7f0d-a038-401a-bb8c-b448cd305023",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Tiro",
-=======
                     "id": "b3a3be74-ead0-4411-b22b-5a59bcd5b818",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -207,7 +190,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "None",
->>>>>>> 99e3685e7fc462cb77a475b702bcd36b55829e65
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
