@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class BarData : MonoBehaviour
+public class StressBar : MonoBehaviour
 {
     //bar body and color
     public Color barColor;
@@ -13,21 +13,13 @@ public class BarData : MonoBehaviour
 
     //arrow body and speed
     public Transform arrowTransform;
+    public Collider2D arrowCol;
     public float arrowSpeed;
     public int nPoints;
     private Sequence aMove;
 
-    //point prefab
-
-    public List<GameObject> tint = new List<GameObject>();
-
-    private void Awake()
-    {
-        ArrowMove(1f);
-    }
-
-    //function responsible for instanciate and custom the stressed bar
-    public BarData BarSetup(Transform barHolder, Color barColor, float arrowSpeed, int nPoints)
+    //function responsible for instantiate and custom the stressed bar
+    public StressBar BarSetup(Transform barHolder, Color barColor, float arrowSpeed, int nPoints)
     {
         var nB = Instantiate(this, barHolder);
         nB.barColor = barColor;
@@ -41,11 +33,11 @@ public class BarData : MonoBehaviour
     {
         aMove = DOTween.Sequence();
 
-        aMove.Append(arrowTransform.DOMoveX(startPos.position.x, speed));
-        
-        aMove.Append(arrowTransform.DOMoveX(endPos.position.x, speed));
+        aMove.Append(arrowTransform.DOMoveX((startPos.position.x - 25f), speed).SetEase(Ease.OutSine));
+        aMove.Append(arrowTransform.DOMoveX((endPos.position.x + 25f), speed).SetEase(Ease.OutSine));
+
         aMove.Play().SetLoops(-1, LoopType.Restart);
     }
 
-    public float GetRandomRectWidth() => Random.Range(100f, 650f); 
+    public float GetRandomRectWidth() => Random.Range(100f, 650f);
 }

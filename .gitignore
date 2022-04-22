@@ -81,3 +81,5 @@ UserSettings/Layouts/*.dwlt
 
 **/*.ipa
 **/*.dSYM.zip
+
+.fake

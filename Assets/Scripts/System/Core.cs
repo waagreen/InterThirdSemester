@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Core : Singleton<Core>
 {
-    public static UiSystem UI => Instance.ui;
-    public static Data Data => Instance.data;
-
     [SerializeField] private UiSystem ui;
     [SerializeField] private Data data;
+    [SerializeField] private InputHandler inp;
+    [SerializeField] private PlayerStateMachine ctx;
+
+    public static UiSystem UI => Instance.ui;
+    public static Data Data => Instance.data;
+    public static InputHandler Binds => Instance.inp;
+    public static PlayerStateMachine Ctx => Instance.ctx;
 }

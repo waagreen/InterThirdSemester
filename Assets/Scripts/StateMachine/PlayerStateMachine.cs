@@ -4,44 +4,44 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    private PlayerBaseState _currentState;
-    private PlayerStateFactory _states;
+    [HideInInspector] public PlayerBaseState cState;
+    [HideInInspector] public PlayerStateFactory fState;
 
     public CharacterController controller;
-    public InputHandler inputCallback;
     public Camera mCam;
 
     //getters setters
-    public bool IsMovePressed { get => inputCallback.IsMovePressed; }
+    public bool IsMovePressed { get => Core.Binds.IsMovePressed; }
 
     public PlayerBaseState CurrentContext
     {
-        get => _currentState;
+        get => cState;
         set
         {
-            _currentState = value;
+            cState = value;
         }
     }
 
     //personagem sempre inicia no IDLE STATE
     public void Awake()
     {
-        _states = new PlayerStateFactory(this);
-        _currentState = _states.Idle();
-        _currentState.EnterState();
+        Core.Data.stressLevel = 3;
+        fState = new PlayerStateFactory(this);
+        cState = fState.Idle();
+        cState.EnterState();
     }
 
     public void Update()
     {
-        _currentState.UpdateState();
         Gravity();
+        cState.UpdateStates();
     }
 
     public void Moving()
     {
         Core.Data.move = Vector3.zero;
 
-        Core.Data.move = inputCallback.mInput;
+        Core.Data.move = Core.Binds.mInput;
         Core.Data.move = mCam.transform.forward * Core.Data.move.z + mCam.transform.right * Core.Data.move.x;
 
         controller.Move(Core.Data.move * Core.Data._speed * Time.deltaTime);
@@ -49,7 +49,9 @@ public class PlayerStateMachine : MonoBehaviour
 
     public void Gravity() 
     {
-        if (!controller.isGrounded) Core.Data.grav.y += Core.Data._gravity * Time.deltaTime;
+        if (controller.isGrounded == false) Core.Data.grav.y += Core.Data._gravity * Time.deltaTime;
         controller.Move(Core.Data.grav * Time.deltaTime);
     }
+
+    public void DestroyObject(GameObject obj) => Destroy(obj); 
 }

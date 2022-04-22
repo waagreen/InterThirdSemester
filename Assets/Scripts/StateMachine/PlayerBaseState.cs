@@ -1,15 +1,17 @@
 public abstract class PlayerBaseState
 {
+    public int _stateNum = 0;
     protected bool isRootState = false;
     protected PlayerStateMachine _contex;
     protected PlayerStateFactory _fact;
     protected PlayerBaseState _currentSuperState;
     protected PlayerBaseState _currentSubState;
 
-    public PlayerBaseState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory)
+    public PlayerBaseState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory, int stateNum)
     {
         _contex = currentContext;
         _fact = playerStateFactory;
+        _stateNum = stateNum;
     }
 
     
@@ -22,7 +24,7 @@ public abstract class PlayerBaseState
     public void UpdateStates() 
     {
         UpdateState();
-        if (_currentSubState != null) _currentSubState.UpdateStates();
+        if (_currentSubState != null) _currentSubState.UpdateState();
     }
     protected void ChangeState(PlayerBaseState newState) 
     {
