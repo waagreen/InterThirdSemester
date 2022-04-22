@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Point
   - Arrow
+  - PickUp
   layers:
   - Default
   - TransparentFX
