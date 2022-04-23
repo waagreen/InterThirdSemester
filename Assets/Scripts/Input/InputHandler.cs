@@ -30,13 +30,31 @@ public class InputHandler : MonoBehaviour
     public void MouseInput(InputAction.CallbackContext context) 
     {
         mPos = baseMove.KeyboardMouse.Look.ReadValue<Vector2>();
+       
+        Core.Data.ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        Debug.DrawLine(Core.Data.ray.origin, Core.Data.ray.direction * 15f, Color.red);
+        
+        if(Physics.Raycast(Core.Data.ray, out Core.Data.hit,Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp")
+        {
+            Debug.Log("You can pick this");
 
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-        Debug.DrawLine(ray.origin, ray.direction * 15f, Color.red);
+        }
+
     }
     public void Interaction(InputAction.CallbackContext context) 
     {
         context.ReadValueAsButton();
+        if (Physics.Raycast(Core.Data.ray, out Core.Data.hit, Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp")
+        {
+            Debug.Log($"you picked a {Core.Data.hit.transform.name}");
+            Core.Data.selectedObject = Core.Data.hit.transform.gameObject;
+            Core.Data.hit.rigidbody.useGravity = false;
+            Core.Data.hit.rigidbody.isKinematic = false;
+            Core.Data.selectedObject.transform.position = Core.Data.playerHands.transform.position;
+            Core.Data.selectedObject.transform.SetParent(Core.Data.playerHands.transform);
+            
+            
+        }
     }
     public void PullComfortObject(InputAction.CallbackContext context)
     {
