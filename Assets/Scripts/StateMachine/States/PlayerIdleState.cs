@@ -26,6 +26,6 @@ public class PlayerIdleState : PlayerBaseState
     {
         if (Core.Data.isComforting == false && Core.Data.isHolding == false) SetSubState(_fact.Passive());
         else if(Core.Data.isComforting == false && Core.Data.isHolding == true) SetSubState(_fact.Holding());
-        else if(Core.Data.isComforting == true && !Core.Data.isHolding == false) SetSubState(_fact.Comforting());
+        else if(Core.Data.isComforting == true && Core.Data.isHolding == false) SetSubState(_fact.Comforting());
     }
 }

@@ -8,18 +8,22 @@ public class PlayerHoldingSubState : PlayerBaseState
 
     public override void EnterState()
     {
+        Core.Binds.PickUpAction();
     }
 
     public override void UpdateState()
     {
-
+        CheckSwitchStates();
     }
     public override void CheckSwitchStates()
     {
-        if (Core.Data.isComforting == false && Core.Data.isHolding == false) ChangeState(_fact.Passive());
+        
+        if (Core.Data.isHolding == false) ChangeState(_fact.Passive());
     }
     public override void ExitState()
     {
+        Debug.Log("To saindo");
+        Core.Binds.DropAction();
     }
 
     public override void InitializeSubState()

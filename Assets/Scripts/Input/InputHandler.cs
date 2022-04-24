@@ -44,16 +44,14 @@ public class InputHandler : MonoBehaviour
     public void Interaction(InputAction.CallbackContext context) 
     {
         context.ReadValueAsButton();
+
+        if (Core.Data.testBool == true)
+        {
+            Core.Data.isHolding = false;
+        }
         if (Physics.Raycast(Core.Data.ray, out Core.Data.hit, Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp")
         {
-            Debug.Log($"you picked a {Core.Data.hit.transform.name}");
-            Core.Data.selectedObject = Core.Data.hit.transform.gameObject;
-            Core.Data.hit.rigidbody.useGravity = false;
-            Core.Data.hit.rigidbody.isKinematic = false;
-            Core.Data.selectedObject.transform.position = Core.Data.playerHands.transform.position;
-            Core.Data.selectedObject.transform.SetParent(Core.Data.playerHands.transform);
-            
-            
+            Core.Data.isHolding = true;
         }
     }
     public void PullComfortObject(InputAction.CallbackContext context)
@@ -72,4 +70,31 @@ public class InputHandler : MonoBehaviour
         baseMove.KeyboardMouse.ComfortObject.started -= PullComfortObject;
         baseMove.Disable();
     }
+    void toggleRigidBody(bool state, Rigidbody rb)
+    {
+        rb.useGravity = state;
+        rb.isKinematic = !state;
+        rb.detectCollisions = state;
+    }
+        public void PickUpAction()
+        {
+            Core.Data.testBool = true;
+            Debug.Log($"you picked a {Core.Data.hit.transform.name}");
+            Core.Data.selectedObject = Core.Data.hit.transform.gameObject;
+            toggleRigidBody(false, Core.Data.hit.rigidbody);
+            Core.Data.selectedObject.transform.position = Core.Data.playerHands.transform.position;
+            Core.Data.selectedObject.transform.SetParent(Core.Data.playerHands.transform);
+        
+        }
+
+        public void DropAction()
+        {
+            var pickedRb = Core.Data.selectedObject.GetComponent<Rigidbody>();
+            Core.Data.testBool = false;
+            Debug.Log($"You dropped a {Core.Data.selectedObject.transform.name}");
+            Core.Data.selectedObject.transform.SetParent(null);
+            toggleRigidBody(true, pickedRb);
+           
+        }
 }
+
