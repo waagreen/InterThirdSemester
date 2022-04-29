@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class Data : MonoBehaviour
 {
-    [HideInInspector] public bool isComforting = false;
-    [HideInInspector] public Vector3 grav;
-    [HideInInspector] public Vector3 move;
+    public int main;
+    public int second;
+
     [Header("Movement Variables")]
     public float _speed;
     public float _gravity;
     public RaycastHit hit;
     public Ray ray;
+    [HideInInspector] public Vector3 grav;
+    [HideInInspector] public Vector3 move;
     
 
-    [HideInInspector] public int stressLevel = 1;
     [Header("Stress Variables")]
     public float stressSpeed = 1f;
     public float waitTime = 30f;
+    [HideInInspector] public int stressLevel = 1;
 
-    //Setup das interações
+
     [Header("Interaction Variables")]
-    public float contactDistance = 1.5f;
+    public float contactDistance = 8.5f;
     public GameObject playerHands;
     public bool isHolding = false;
-    public bool testBool = false;
-    [HideInInspector] public GameObject selectedObject;
-    
+    public bool isComforting = false;
+    [HideInInspector] public GameObject selectedObject;    
 }

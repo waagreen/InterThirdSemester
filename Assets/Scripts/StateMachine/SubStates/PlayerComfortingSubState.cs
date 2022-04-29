@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerComfortingSubState : PlayerBaseState
 {
-    public PlayerComfortingSubState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory, 5) { isRootState = false; }
+    public PlayerComfortingSubState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { isRootState = false; }
 
     public override void EnterState()
     {

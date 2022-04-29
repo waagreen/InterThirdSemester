@@ -13,8 +13,14 @@ public class InputHandler : MonoBehaviour
     public InputActionReference mZero;
     public InputActionReference mFollow;
 
+    private GameObject selectedObject;
+    private GameObject playerHands;
+
     private void Awake()
     {
+        selectedObject = Core.Data.selectedObject;
+        playerHands = Core.Data.playerHands;
+
         baseMove = new BaseMovement();
 
         baseMove.KeyboardMouse.ComfortObject.started += PullComfortObject;
@@ -45,11 +51,11 @@ public class InputHandler : MonoBehaviour
     {
         context.ReadValueAsButton();
 
-        if (Core.Data.testBool == true)
+        if (Core.Data.second == 3)
         {
             Core.Data.isHolding = false;
         }
-        if (Physics.Raycast(Core.Data.ray, out Core.Data.hit, Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp")
+        if (Physics.Raycast(Core.Data.ray, out Core.Data.hit, 2f * Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp")
         {
             Core.Data.isHolding = true;
         }
@@ -57,44 +63,41 @@ public class InputHandler : MonoBehaviour
     public void PullComfortObject(InputAction.CallbackContext context)
     {
         context.ReadValueAsButton();
-        if(Core.Ctx.CurrentContext._stateNum < 5) Core.Data.isComforting = true;
-    }
-
-
-    private void OnEnable()
-    {
-        baseMove.Enable();
-    }
-    private void OnDisable()
-    {
-        baseMove.KeyboardMouse.ComfortObject.started -= PullComfortObject;
-        baseMove.Disable();
+        if(Core.Data.second == 2) Core.Data.isComforting = false;
+        else Core.Data.isComforting = true;
     }
     void toggleRigidBody(bool state, Rigidbody rb)
     {
         rb.useGravity = state;
         rb.isKinematic = !state;
         rb.detectCollisions = state;
+        rb.drag = 0;
     }
-        public void PickUpAction()
-        {
-            Core.Data.testBool = true;
-            Debug.Log($"you picked a {Core.Data.hit.transform.name}");
-            Core.Data.selectedObject = Core.Data.hit.transform.gameObject;
-            toggleRigidBody(false, Core.Data.hit.rigidbody);
-            Core.Data.selectedObject.transform.position = Core.Data.playerHands.transform.position;
-            Core.Data.selectedObject.transform.SetParent(Core.Data.playerHands.transform);
-        
-        }
-
-        public void DropAction()
-        {
-            var pickedRb = Core.Data.selectedObject.GetComponent<Rigidbody>();
-            Core.Data.testBool = false;
-            Debug.Log($"You dropped a {Core.Data.selectedObject.transform.name}");
-            Core.Data.selectedObject.transform.SetParent(null);
-            toggleRigidBody(true, pickedRb);
-           
-        }
+    public void PickUpAction()
+    {
+        Debug.Log($"you picked a {Core.Data.hit.transform.name}");
+        selectedObject = Core.Data.hit.transform.gameObject;
+        toggleRigidBody(false, Core.Data.hit.rigidbody);
+        selectedObject.transform.position = playerHands.transform.position;
+        selectedObject.transform.SetParent(playerHands.transform);
+    }
+    public void DropAction()
+    {
+        var pickedRb = selectedObject.GetComponent<Rigidbody>();
+        Debug.Log($"You dropped a {selectedObject.transform.name}");
+        selectedObject.transform.SetParent(null);
+        toggleRigidBody(true, pickedRb);
+        pickedRb.AddForce(playerHands.transform.forward * 5f, ForceMode.Impulse);
+        pickedRb.drag = 0.5f;
+    }
+    
+    private void OnEnable() => baseMove.Enable();
+    
+    private void OnDisable()
+    {
+        baseMove.KeyboardMouse.ComfortObject.started -= PullComfortObject;
+        baseMove.KeyboardMouse.PickUp.started -= Interaction;
+        baseMove.Disable();
+    }
 }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerPassiveSubState : PlayerBaseState
 {
-    public PlayerPassiveSubState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory, 4) { isRootState = false; }
+    public PlayerPassiveSubState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { isRootState = false; }
 
     public override void EnterState()
     {

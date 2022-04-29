@@ -1,17 +1,15 @@
 public abstract class PlayerBaseState
 {
-    public int _stateNum = 0;
     protected bool isRootState = false;
     protected PlayerStateMachine _contex;
     protected PlayerStateFactory _fact;
     protected PlayerBaseState _currentSuperState;
     protected PlayerBaseState _currentSubState;
 
-    public PlayerBaseState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory, int stateNum)
+    public PlayerBaseState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory)
     {
         _contex = currentContext;
         _fact = playerStateFactory;
-        _stateNum = stateNum;
     }
 
     

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 enum PlayerState
 {
@@ -24,9 +25,29 @@ public class PlayerStateFactory
         _states[PlayerState.holding] = new PlayerHoldingSubState(_context, this);
     }
 
-    public PlayerBaseState Idle() => _states[PlayerState.idle];
-    public PlayerBaseState Moving() => _states[PlayerState.moving];
-    public PlayerBaseState Passive() => _states[PlayerState.passive];
-    public PlayerBaseState Comforting() => _states[PlayerState.interacting];
-    public PlayerBaseState Holding() => _states[PlayerState.holding];
+    public PlayerBaseState Idle()
+    {
+        Core.Data.main = 1; 
+        return _states[PlayerState.idle];
+    }
+    public PlayerBaseState Moving()
+    {
+        Core.Data.main = 2;
+        return _states[PlayerState.moving];
+    }
+    public PlayerBaseState Passive()
+    {
+        Core.Data.second = 1;
+        return _states[PlayerState.passive];
+    }
+    public PlayerBaseState Comforting() 
+    {
+        Core.Data.second = 2;
+        return _states[PlayerState.interacting];
+    }
+    public PlayerBaseState Holding() 
+    {
+        Core.Data.second = 3;
+        return _states[PlayerState.holding];
+    }
 }
