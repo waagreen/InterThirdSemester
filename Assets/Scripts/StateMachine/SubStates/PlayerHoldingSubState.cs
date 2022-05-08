@@ -22,7 +22,6 @@ public class PlayerHoldingSubState : PlayerBaseState
     }
     public override void ExitState()
     {
-        Debug.Log("To saindo");
         Core.Binds.DropAction();
     }
 

@@ -1,31 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using DG.Tweening;
 
 public class BoxMinigame : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private UnityEvent OnAnimDone = new UnityEvent();
+    private Material toyMaterial;
+    private GameObject toy;
+    private int boxCount;
 
-    public Collider toyEraser;
-    public Material toyMaterial;
-    public int boxCount;
-
+    private void Awake() => OnAnimDone.AddListener(() => Tdestroy(toy));
     
-        void OnTriggerEnter(Collider boxedObject)
-        {
-            //if (boxedObject.CompareTag("PickUp"))
-            
-                toyMaterial = boxedObject.GetComponent<Material>();
-                boxCount++;
-                FadeToy(0.5f,toyMaterial);
-                Destroy(boxedObject.gameObject, 1);
-            
-        }
-    
-
-    public void FadeToy(float timeToFade, Material toyMaterial)
+    private void OnTriggerEnter(Collider boxedObject)
     {
-        toyMaterial.DOFade(0, timeToFade);
+        Debug.Log("Object collided");
+        toyMaterial = boxedObject.GetComponent<Renderer>().material;
+        toy = boxedObject.gameObject;
+        FadeToy(1f, toyMaterial);
     }
+    private void FadeToy(float timeToFade, Material material) => material.DOFade(0f, timeToFade).SetEase(Ease.OutQuint).OnComplete(OnAnimDone.Invoke);
+    private void Tdestroy(GameObject obj) => Destroy(obj);
+
+    private void OnDestroy() => OnAnimDone.RemoveAllListeners();
 }
