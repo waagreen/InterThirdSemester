@@ -43,28 +43,19 @@ public class InputHandler : MonoBehaviour
         if(Physics.Raycast(Core.Data.ray, out Core.Data.hit,Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp")
         {
             Debug.Log("You can pick this");
-
         }
-
     }
     public void Interaction(InputAction.CallbackContext context) 
     {
         context.ReadValueAsButton();
 
-        if (Core.Data.second == 3)
-        {
-            Core.Data.isHolding = false;
-        }
-        if (Physics.Raycast(Core.Data.ray, out Core.Data.hit, 2f * Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp")
-        {
-            Core.Data.isHolding = true;
-        }
+        if (Core.Data.second == 3) Core.Data.isHolding = false;
+        if (Physics.Raycast(Core.Data.ray, out Core.Data.hit, 2f * Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp") Core.Data.isHolding = true;
     }
     public void PullComfortObject(InputAction.CallbackContext context)
     {
         context.ReadValueAsButton();
-        if(Core.Data.second == 2) Core.Data.isComforting = false;
-        else Core.Data.isComforting = true;
+        if(!Core.Data.isComforting) Core.Data.isComforting = true;
     }
     void toggleRigidBody(bool state, Rigidbody rb)
     {

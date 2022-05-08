@@ -31,7 +31,7 @@ public class UiSystem : MonoBehaviour
         else activeBar = stress.BarSetup(barHolder, Color.cyan, 2.1f, 3);
 
 
-        activeBar.ArrowMove(activeBar.arrowSpeed);
+        activeBar?.ArrowMove(activeBar.arrowSpeed);
         for (int i = 0; i < activeBar.nPoints; i++)
         {
             var a = CreatePoints(activeBar.GetRandomRectWidth(), activeBar.barColor);
@@ -54,8 +54,9 @@ public class UiSystem : MonoBehaviour
 
     private void EndStressGame()
     {
-        activeBar.gameObject.SetActive(false);
         Core.Data.isComforting = false;
+        isStressed = false;
+        Destroy(activeBar.gameObject);
     }
 
     public void CheckMiniGameEnd()
