@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class InputHandler : MonoBehaviour
 {
@@ -15,6 +17,9 @@ public class InputHandler : MonoBehaviour
 
     private GameObject selectedObject;
     private GameObject playerHands;
+    private GameObject currentTarget;
+
+    public TMP_Text objName;
 
     private void Awake()
     {
@@ -36,13 +41,25 @@ public class InputHandler : MonoBehaviour
     public void MouseInput(InputAction.CallbackContext context) 
     {
         mPos = baseMove.KeyboardMouse.Look.ReadValue<Vector2>();
-       
-        Core.Data.ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-        Debug.DrawLine(Core.Data.ray.origin, Core.Data.ray.direction * 15f, Color.red);
+
+        Core.Data.ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0f));
         
-        if(Physics.Raycast(Core.Data.ray, out Core.Data.hit,Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp")
+        if(Physics.Raycast(Core.Data.ray, out Core.Data.hit, Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp")
         {
-            Debug.Log("You can pick this");
+            var target = Core.Data.hit.transform.gameObject;
+            if(currentTarget != target)
+            {
+                objName.gameObject.SetActive(true);
+                objName.SetText(Core.Data.hit.transform.gameObject.name);
+                currentTarget = target;
+                currentTarget.layer = LayerMask.NameToLayer("Highlight");
+            }
+        }
+        else if(currentTarget != null)
+        { 
+            objName.gameObject.SetActive(false);
+            currentTarget.layer = LayerMask.NameToLayer("Default");
+            currentTarget = null;
         }
     }
     public void Interaction(InputAction.CallbackContext context) 
@@ -50,7 +67,7 @@ public class InputHandler : MonoBehaviour
         context.ReadValueAsButton();
 
         if (Core.Data.second == 3) Core.Data.isHolding = false;
-        if (Physics.Raycast(Core.Data.ray, out Core.Data.hit, 2f * Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp") Core.Data.isHolding = true;
+        if (Physics.Raycast(Core.Data.ray, out Core.Data.hit, Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp") Core.Data.isHolding = true;
     }
     public void PullComfortObject(InputAction.CallbackContext context)
     {

@@ -23,9 +23,10 @@ public class Data : MonoBehaviour
 
 
     [Header("Interaction Variables")]
-    public float contactDistance = 8.5f;
+    public float contactDistance = 10f;
     public GameObject playerHands;
     public bool isHolding = false;
     public bool isComforting = false;
+    public bool isInteracting = false;
     [HideInInspector] public GameObject selectedObject;    
 }

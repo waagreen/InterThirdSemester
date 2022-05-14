@@ -1167,9 +1167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77d23adbdcb21f48925d344660eb15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toyEraser: {fileID: 0}
-  toyMaterial: {fileID: 0}
-  boxCount: 0
+  hud: {fileID: 0}
+  container: {fileID: 0}
+  maxCount: 4
 --- !u!65 &4030710565788152452
 BoxCollider:
   m_ObjectHideFlags: 0

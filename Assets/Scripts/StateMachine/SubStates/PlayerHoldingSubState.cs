@@ -17,7 +17,6 @@ public class PlayerHoldingSubState : PlayerBaseState
     }
     public override void CheckSwitchStates()
     {
-        
         if (Core.Data.isHolding == false) ChangeState(_fact.Passive());
     }
     public override void ExitState()

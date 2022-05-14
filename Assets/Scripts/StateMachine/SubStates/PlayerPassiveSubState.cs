@@ -10,6 +10,7 @@ public class PlayerPassiveSubState : PlayerBaseState
     {
         Core.Data.isComforting = false;
         Core.Data.isHolding = false; 
+        Core.Data.isInteracting = false;
     }
     
     public override void UpdateState()
@@ -21,6 +22,7 @@ public class PlayerPassiveSubState : PlayerBaseState
     {
         if(Core.Data.isComforting) ChangeState(_fact.Comforting());
         else if(Core.Data.isHolding) ChangeState(_fact.Holding());
+        else if(Core.Data.isInteracting) ChangeState(_fact.Interacting());
     }
 
     public override void ExitState()

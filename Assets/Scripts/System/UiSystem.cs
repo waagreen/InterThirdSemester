@@ -64,7 +64,8 @@ public class UiSystem : MonoBehaviour
         if(points.Count == 0 && activeBar != null) OnMiniGameEnd.Invoke();
     }
 
-    private void OnDisable() {
+    private void OnDisable() 
+    {
         
         OnMiniGameEnd.RemoveAllListeners();    
     }
