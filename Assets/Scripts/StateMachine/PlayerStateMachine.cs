@@ -6,9 +6,12 @@ public class PlayerStateMachine : MonoBehaviour
 {
     [HideInInspector] public PlayerBaseState cState;
     [HideInInspector] public PlayerStateFactory fState;
+    [SerializeField] private Transform player;
 
     public CharacterController controller;
     public Camera mCam;
+
+    private Vector3 move;
 
     //getters setters
     public bool IsMovePressed { get => Core.Binds.IsMovePressed; }
@@ -25,6 +28,8 @@ public class PlayerStateMachine : MonoBehaviour
     //personagem sempre inicia no IDLE STATE
     public void Awake()
     {
+        move = Core.Data.move;
+
         Core.Data.stressLevel = 4;
         fState = new PlayerStateFactory(this);
         cState = fState.Idle();
@@ -39,12 +44,12 @@ public class PlayerStateMachine : MonoBehaviour
 
     public void Moving()
     {
-        Core.Data.move = Vector3.zero;
+        move = Vector3.zero;
 
-        Core.Data.move = Core.Binds.mInput;
-        Core.Data.move = mCam.transform.forward * Core.Data.move.z + mCam.transform.right * Core.Data.move.x;
+        move = Core.Binds.mInput;
+        move = mCam.transform.forward * move.z + mCam.transform.right * move.x;
 
-        controller.Move(Core.Data.move * Core.Data._speed * Time.deltaTime);
+        controller.Move(move * Core.Data._speed * Time.deltaTime);
     }
 
     public void Gravity() 

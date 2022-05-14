@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerComfortingSubState : PlayerBaseState
 {
-    public PlayerComfortingSubState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory, 5) { isRootState = false; }
+    public PlayerComfortingSubState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { isRootState = false; }
 
     public override void EnterState()
     {
@@ -20,7 +20,7 @@ public class PlayerComfortingSubState : PlayerBaseState
 
     public override void CheckSwitchStates()
     {
-        if (Core.Data.isComforting == false && Core.Data.isHolding == false) ChangeState(_fact.Passive());
+        if (!Core.Data.isComforting) ChangeState(_fact.Passive());
     }
 
     public override void ExitState()
@@ -31,6 +31,6 @@ public class PlayerComfortingSubState : PlayerBaseState
 
     public override void InitializeSubState()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

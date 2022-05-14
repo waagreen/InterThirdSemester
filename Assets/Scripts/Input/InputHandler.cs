@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class InputHandler : MonoBehaviour
 {
@@ -13,8 +15,17 @@ public class InputHandler : MonoBehaviour
     public InputActionReference mZero;
     public InputActionReference mFollow;
 
+    private GameObject selectedObject;
+    private GameObject playerHands;
+    private GameObject currentTarget;
+
+    public TMP_Text objName;
+
     private void Awake()
     {
+        selectedObject = Core.Data.selectedObject;
+        playerHands = Core.Data.playerHands;
+
         baseMove = new BaseMovement();
 
         baseMove.KeyboardMouse.ComfortObject.started += PullComfortObject;
@@ -31,27 +42,70 @@ public class InputHandler : MonoBehaviour
     {
         mPos = baseMove.KeyboardMouse.Look.ReadValue<Vector2>();
 
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-        Debug.DrawLine(ray.origin, ray.direction * 15f, Color.red);
+        Core.Data.ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0f));
+        
+        if(Physics.Raycast(Core.Data.ray, out Core.Data.hit, Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp")
+        {
+            var target = Core.Data.hit.transform.gameObject;
+            if(currentTarget != target)
+            {
+                objName.gameObject.SetActive(true);
+                objName.SetText(Core.Data.hit.transform.gameObject.name);
+                currentTarget = target;
+                currentTarget.layer = LayerMask.NameToLayer("Highlight");
+            }
+        }
+        else if(currentTarget != null)
+        { 
+            objName.gameObject.SetActive(false);
+            currentTarget.layer = LayerMask.NameToLayer("Default");
+            currentTarget = null;
+        }
     }
     public void Interaction(InputAction.CallbackContext context) 
     {
         context.ReadValueAsButton();
+
+        if (Core.Data.second == 3) Core.Data.isHolding = false;
+        if (Physics.Raycast(Core.Data.ray, out Core.Data.hit, Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp") Core.Data.isHolding = true;
     }
     public void PullComfortObject(InputAction.CallbackContext context)
     {
         context.ReadValueAsButton();
-        if(Core.Ctx.CurrentContext._stateNum < 5) Core.Data.isComforting = true;
+        if(!Core.Data.isComforting) Core.Data.isComforting = true;
     }
-
-
-    private void OnEnable()
+    void toggleRigidBody(bool state, Rigidbody rb)
     {
-        baseMove.Enable();
+        rb.useGravity = state;
+        rb.isKinematic = !state;
+        rb.detectCollisions = state;
+        rb.drag = 0;
     }
+    public void PickUpAction()
+    {
+        Debug.Log($"you picked a {Core.Data.hit.transform.name}");
+        selectedObject = Core.Data.hit.transform.gameObject;
+        toggleRigidBody(false, Core.Data.hit.rigidbody);
+        selectedObject.transform.position = playerHands.transform.position;
+        selectedObject.transform.SetParent(playerHands.transform);
+    }
+    public void DropAction()
+    {
+        var pickedRb = selectedObject.GetComponent<Rigidbody>();
+        Debug.Log($"You dropped a {selectedObject.transform.name}");
+        selectedObject.transform.SetParent(null);
+        toggleRigidBody(true, pickedRb);
+        pickedRb.AddForce(playerHands.transform.forward * 5f, ForceMode.Impulse);
+        pickedRb.drag = 0.5f;
+    }
+    
+    private void OnEnable() => baseMove.Enable();
+    
     private void OnDisable()
     {
         baseMove.KeyboardMouse.ComfortObject.started -= PullComfortObject;
+        baseMove.KeyboardMouse.PickUp.started -= Interaction;
         baseMove.Disable();
     }
 }
+

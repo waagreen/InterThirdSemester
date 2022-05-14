@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovingState : PlayerBaseState
 {
-    public PlayerMovingState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory, 1) { isRootState = true; }
+    public PlayerMovingState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { isRootState = true; }
 
     public override void EnterState()
     {
@@ -27,7 +27,7 @@ public class PlayerMovingState : PlayerBaseState
     {
         if (Core.Data.isComforting == false && Core.Data.isHolding == false) SetSubState(_fact.Passive());
         else if(Core.Data.isComforting == false && Core.Data.isHolding == true) SetSubState(_fact.Holding());
-        else if(Core.Data.isComforting == true && !Core.Data.isHolding == false) SetSubState(_fact.Comforting());
+        else if(Core.Data.isComforting == true && Core.Data.isHolding == false) SetSubState(_fact.Comforting());
     }
 
 }
