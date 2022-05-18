@@ -8,12 +8,12 @@ using TMPro;
 public class UiSystem : MonoBehaviour
 {
     [HideInInspector] public StressBar activeBar;
+    [HideInInspector] public List<GameObject> points = new List<GameObject>();
+    [SerializeField] private Transform barHolder;
     public StressBar stress;
     public PointBehaviour point;
-    public List<GameObject> points = new List<GameObject>();
     public UnityEvent OnMiniGameEnd = new UnityEvent();
 
-    [SerializeField] private Transform barHolder;
     private bool isStressed = false;
 
     private void Awake() 
