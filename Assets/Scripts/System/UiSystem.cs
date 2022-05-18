@@ -30,7 +30,6 @@ public class UiSystem : MonoBehaviour
         else if (stressLevel >= 2) activeBar = stress.BarSetup(barHolder, Color.blue, 1.7f, 3);
         else activeBar = stress.BarSetup(barHolder, Color.cyan, 2.1f, 3);
 
-
         activeBar?.ArrowMove(activeBar.arrowSpeed);
         for (int i = 0; i < activeBar.nPoints; i++)
         {
@@ -58,15 +57,12 @@ public class UiSystem : MonoBehaviour
         isStressed = false;
         Destroy(activeBar.gameObject);
     }
-
     public void CheckMiniGameEnd()
     {
         if(points.Count == 0 && activeBar != null) OnMiniGameEnd.Invoke();
     }
-
     private void OnDisable() 
     {
-        
         OnMiniGameEnd.RemoveAllListeners();    
     }
 }

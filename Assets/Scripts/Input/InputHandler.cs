@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -14,6 +15,8 @@ public class InputHandler : MonoBehaviour
     public Cinemachine.CinemachineInputProvider mLook;
     public InputActionReference mZero;
     public InputActionReference mFollow;
+
+    public UnityEvent OnInteract = new UnityEvent();
 
     private GameObject selectedObject;
     private GameObject playerHands;
@@ -67,7 +70,8 @@ public class InputHandler : MonoBehaviour
         context.ReadValueAsButton();
 
         if (Core.Data.second == 3) Core.Data.isHolding = false;
-        if (Physics.Raycast(Core.Data.ray, out Core.Data.hit, Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp") Core.Data.isHolding = true;
+        else if(Physics.Raycast(Core.Data.ray, out Core.Data.hit, Core.Data.contactDistance) && Core.Data.hit.transform.tag == "PickUp") Core.Data.isHolding = true;
+        else if(Physics.Raycast(Core.Data.ray, out Core.Data.hit, Core.Data.contactDistance) && Core.Data.hit.transform.tag == "Interactible") OnInteract.Invoke();
     }
     public void PullComfortObject(InputAction.CallbackContext context)
     {
@@ -105,6 +109,7 @@ public class InputHandler : MonoBehaviour
     {
         baseMove.KeyboardMouse.ComfortObject.started -= PullComfortObject;
         baseMove.KeyboardMouse.PickUp.started -= Interaction;
+        OnInteract.RemoveAllListeners();
         baseMove.Disable();
     }
 }
